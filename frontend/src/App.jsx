@@ -1,15 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import LoginPage from './pages/LoginPage.jsx';
 import RegisterPage from './pages/RegisterPage.jsx';
-import Semester1Page from './pages/Semester1Page.jsx';
-import Semester2Page from './pages/Semester2Page.jsx';
-import Semester3Page from './pages/Semester3Page.jsx';
-import Semester4Page from './pages/Semester4Page.jsx';
-import Semester5Page from './pages/Semester5Page.jsx';
-import Semester6Page from './pages/Semester6Page.jsx';
-import Semester7Page from './pages/Semester7Page.jsx';
-import Semester8Page from './pages/Semester8Page.jsx';
+import SemesterPage from './pages/SemesterPage.jsx';
 import QuestionBankPage from './pages/QuestionBankPage.jsx';
+import AdminPage from './pages/AdminPage.jsx';
 
 // --- Reusable SVG Icon Components ---
 const LogoIcon = () => (
@@ -58,49 +52,192 @@ const useIntersectionObserver = (options) => {
 
 // --- Page Components ---
 
-const Header = ({ onNavClick, currentPage }) => {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+const Header = ({ onNavClick, user, currentPage, handleLogout }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    const NavLink = ({ page, children }) => (
-        <a href="#" className={`transition-colors duration-300 ${currentPage === page ? 'active-nav text-sky-500' : 'text-slate-600 hover:text-sky-500'}`} onClick={(e) => { e.preventDefault(); onNavClick(page); setIsMobileMenuOpen(false); }}>
-            {children}
-        </a>
-    );
+  const NavLink = ({ page, children }) => (
+    <a
+      href="#"
+      className={`transition-colors duration-300 ${
+        currentPage === page
+          ? "active-nav text-sky-500"
+          : "text-slate-600 hover:text-sky-500"
+      }`}
+      onClick={(e) => {
+        e.preventDefault();
+        onNavClick(page);
+        setIsMobileMenuOpen(false);
+      }}
+    >
+      {children}
+    </a>
+  );
 
-    return (
-        <header className="bg-white/90 backdrop-blur-lg sticky top-0 z-50 border-b border-slate-200 shadow-sm">
-            <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16">
-                    <a href="#" className="flex-shrink-0 flex items-center gap-2" onClick={(e) => { e.preventDefault(); onNavClick('home'); }}><LogoIcon /><span className="text-2xl font-bold text-slate-800">UniPrep</span></a>
-                    <div className="hidden md:flex md:items-center md:space-x-8">
-                        <NavLink page="home">Home</NavLink>
-                        <NavLink page="semesters">Semesters</NavLink>
-                        <NavLink page="about">About</NavLink>
-                    </div>
-                    <div className="hidden md:flex items-center gap-2">
-                        <a href="#" onClick={(e) => { e.preventDefault(); onNavClick('login'); }} className="px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 rounded-lg transition-colors duration-300">Login</a>
-                        <a href="#" onClick={(e) => { e.preventDefault(); onNavClick('register'); }} className="px-4 py-2 text-sm font-medium text-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 transition-all duration-300 gradient-btn">Register</a>
-                    </div>
-                    <div className="md:hidden flex items-center">
-                        <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="inline-flex items-center justify-center p-2 rounded-md text-slate-500 hover:text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500"><HamburgerIcon /></button>
-                    </div>
-                </div>
-                {/* Mobile Menu */}
-                {isMobileMenuOpen && (
-                    <div className="md:hidden">
-                        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                            <a href="#" onClick={(e) => { e.preventDefault(); onNavClick('home'); setIsMobileMenuOpen(false); }} className={`block px-3 py-2 rounded-md text-base font-medium ${currentPage === 'home' ? 'text-sky-500 bg-slate-100' : 'text-slate-700'} hover:text-sky-500 hover:bg-slate-100`}>Home</a>
-                            <a href="#" onClick={(e) => { e.preventDefault(); onNavClick('semesters'); setIsMobileMenuOpen(false); }} className={`block px-3 py-2 rounded-md text-base font-medium ${currentPage === 'semesters' ? 'text-sky-500 bg-slate-100' : 'text-slate-700'} hover:text-sky-500 hover:bg-slate-100`}>Semesters</a>
-                            <a href="#" onClick={(e) => { e.preventDefault(); onNavClick('about'); setIsMobileMenuOpen(false); }} className={`block px-3 py-2 rounded-md text-base font-medium ${currentPage === 'about' ? 'text-sky-500 bg-slate-100' : 'text-slate-700'} hover:text-sky-500 hover:bg-slate-100`}>About</a>
-                            <a href="#" onClick={(e) => { e.preventDefault(); onNavClick('login'); setIsMobileMenuOpen(false); }} className="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-sky-500 hover:bg-slate-100">Login</a>
-                            <a href="#" onClick={(e) => { e.preventDefault(); onNavClick('register'); setIsMobileMenuOpen(false); }} className="block px-3 py-2 rounded-md text-base font-medium text-white bg-sky-500 hover:bg-sky-600">Register</a>
-                        </div>
-                    </div>
+  return (
+    <header className="bg-white/90 backdrop-blur-lg sticky top-0 z-50 border-b border-slate-200 shadow-sm">
+      <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <a
+            href="#"
+            className="flex-shrink-0 flex items-center gap-2"
+            onClick={(e) => {
+              e.preventDefault();
+              onNavClick("home");
+            }}
+          >
+            <LogoIcon />
+            <span className="text-2xl font-bold text-slate-800">UniPrep</span>
+          </a>
+
+          {/* Desktop Nav */}
+          <div className="hidden md:flex md:items-center md:space-x-8">
+            {user?.role === "admin" ? (
+              <NavLink page="admin">Admin</NavLink>
+            ) : (
+              <>
+                <NavLink page="home">Home</NavLink>
+                <NavLink page="semesters">Semesters</NavLink>
+                <NavLink page="about">About</NavLink>
+              </>
+            )}
+          </div>
+
+          {/* Desktop Auth Buttons */}
+          <div className="hidden md:flex items-center gap-2">
+            {user ? (
+              <>
+                {user?.role !== "admin" && (
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      onNavClick("dashboard");
+                    }}
+                    className="px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 rounded-lg transition-colors duration-300"
+                  >
+                    Dashboard
+                  </a>
                 )}
-            </nav>
-        </header>
-    );
+                <button
+                  onClick={handleLogout}
+                  className="px-4 py-2 text-sm font-medium text-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 bg-red-500 hover:bg-red-600 transition-all duration-300"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavClick("login");
+                  }}
+                  className="px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 rounded-lg transition-colors duration-300"
+                >
+                  Login
+                </a>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavClick("register");
+                  }}
+                  className="px-4 py-2 text-sm font-medium text-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 transition-all duration-300 gradient-btn"
+                >
+                  Register
+                </a>
+              </>
+            )}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="inline-flex items-center justify-center p-2 rounded-md text-slate-500 hover:text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500"
+            >
+              <HamburgerIcon />
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              {user?.role === "admin" ? (
+                <>
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      onNavClick("admin");
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className={`block px-3 py-2 rounded-md text-base font-medium ${
+                      currentPage === "admin"
+                        ? "text-sky-500 bg-slate-100"
+                        : "text-slate-700"
+                    } hover:text-sky-500 hover:bg-slate-100`}
+                  >
+                    Admin
+                  </a>
+                  <button
+                    onClick={() => {
+                      handleLogout();
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-white bg-red-500 hover:bg-red-600"
+                  >
+                    Logout
+                  </button>
+                </>
+              ) : (
+                <>
+                  <NavLink page="home">Home</NavLink>
+                  <NavLink page="semesters">Semesters</NavLink>
+                  <NavLink page="about">About</NavLink>
+
+                  {user ? (
+                    <>
+                      <NavLink page="dashboard">Dashboard</NavLink>
+                      <button
+                        onClick={() => {
+                          handleLogout();
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-white bg-red-500 hover:bg-red-600"
+                      >
+                        Logout
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <NavLink page="login">Login</NavLink>
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          onNavClick("register");
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className="block px-3 py-2 rounded-md text-base font-medium text-white bg-sky-500 hover:bg-sky-600"
+                      >
+                        Register
+                      </a>
+                    </>
+                  )}
+                </>
+              )}
+            </div>
+          </div>
+        )}
+      </nav>
+    </header>
+  );
 };
+
 
 const FeatureCard = ({ icon, title, children, delay }) => (
     <div className="text-center p-6 feature-card" style={{ animationDelay: delay }}>
@@ -289,7 +426,15 @@ const PracticeTestPage = () => { return <section className="page active"><div cl
 
 export default function App() {
     const [currentPage, setCurrentPage] = useState('home');
-    const [pageContext, setPageContext] = useState({}); // Holds selected subject/semester
+    const [pageContext, setPageContext] = useState({});
+    const [user, setUser] = useState(null); // Holds selected subject/semester
+
+    // Inside App component
+const handleLogout = () => {
+    setUser(null);
+    setCurrentPage('home');
+};
+    
 
     const handleNavClick = (page, context = {}) => {
         window.scrollTo(0, 0);
@@ -299,28 +444,55 @@ export default function App() {
         setCurrentPage(page);
     };
 
+     
+    const handleLoginSuccess = (loggedInUser) => {
+  setUser(loggedInUser);
+
+  if (loggedInUser.role === "admin") {
+    setCurrentPage("admin");
+  } else {
+    setCurrentPage("dashboard"); // better than 'home' for normal users
+  }
+};
+
+
     const renderPage = () => {
-        switch (currentPage) {
-            case 'home': return <HomePage onNavClick={handleNavClick} />;
-            case 'semester1': return <Semester1Page onNavClick={handleNavClick} />;
-            case 'semester2': return <Semester2Page onNavClick={handleNavClick} />;
-            case 'semester3': return <Semester3Page onNavClick={handleNavClick} />;
-            case 'semester4': return <Semester4Page onNavClick={handleNavClick} />;
-            case 'semester5': return <Semester5Page onNavClick={handleNavClick} />;
-            case 'semester6': return <Semester6Page onNavClick={handleNavClick} />;
-            case 'semester7': return <Semester7Page onNavClick={handleNavClick} />;
-            case 'semester8': return <Semester8Page onNavClick={handleNavClick} />;
-            case 'semesters': return <SemestersPage onNavClick={handleNavClick} />;
-            case 'question-bank':
-                return <QuestionBankPage subject={pageContext.subject} semester={pageContext.semester} onNavClick={handleNavClick} />;
-            case 'about': return <AboutPage onNavClick={handleNavClick} />;
-            case 'dashboard': return <DashboardPage />;
-            case 'practice-test': return <PracticeTestPage />;
-            case 'login': return <LoginPage onNavClick={handleNavClick} />;
-            case 'register': return <RegisterPage onNavClick={handleNavClick} />;
-            default: return <HomePage onNavClick={handleNavClick} />;
-        }
-    };
+  switch (currentPage) {
+    case 'home': return <HomePage onNavClick={handleNavClick} />;
+    case 'semesters': return <SemestersPage onNavClick={handleNavClick} />;
+    case 'question-bank':
+      return (
+        <QuestionBankPage
+          subject={pageContext.subject}
+          semester={pageContext.semester}
+          onNavClick={handleNavClick}
+        />
+      );
+    case 'about': return <AboutPage onNavClick={handleNavClick} />;
+    case 'dashboard': return <DashboardPage />;
+    case 'practice-test': return <PracticeTestPage />;
+    case 'login': 
+      return <LoginPage onNavClick={handleNavClick} onLoginSuccess={handleLoginSuccess} />;
+    case 'register': return <RegisterPage onNavClick={handleNavClick} />;
+    case 'admin': 
+      return user?.role === "admin" ? <AdminPage /> : <HomePage onNavClick={handleNavClick} />; 
+    
+    // ✅ New dynamic semester route
+    case 'semester1':
+    case 'semester2':
+    case 'semester3':
+    case 'semester4':
+    case 'semester5':
+    case 'semester6':
+    case 'semester7':
+    case 'semester8':
+      return <SemesterPage semester={currentPage} onNavClick={handleNavClick} />;
+    
+    default: return <HomePage onNavClick={handleNavClick} />;
+  }
+};
+
+
 
     return (
         <>
@@ -337,7 +509,13 @@ export default function App() {
                 .bg-grid-slate-200 { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(226 232 240 / 1)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e"); }
             `}</style>
             <div className="antialiased text-slate-800">
-                <Header onNavClick={handleNavClick} currentPage={currentPage} />
+                <Header 
+  onNavClick={handleNavClick} 
+  user={user} 
+  handleLogout={handleLogout} 
+  currentPage={currentPage}
+/>
+
                 <main className="container mx-auto p-4 sm:p-6 lg:p-8">
                     {renderPage()}
                 </main>
