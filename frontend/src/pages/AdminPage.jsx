@@ -15,6 +15,7 @@ export default function AdminPage() {
   const [subjectCode, setSubjectCode] = useState("");
   const [status, setStatus] = useState({ state: "idle", message: "" });
 
+  // Fetch all semesters
   const fetchSemesters = async () => {
     try {
       const res = await fetch("/api/semesters");
@@ -25,39 +26,28 @@ export default function AdminPage() {
     }
   };
 
+  useEffect(() => {
+    fetchSemesters();
+  }, []);
 
-
-  // Fetch semesters (fixed)
-useEffect(() => {
-  const loadSemesters = async () => {
-    try {
-      await fetchSemesters();
-    } catch (err) {
-      console.error("Error loading semesters:", err);
+  // Fetch subjects when semester changes
+  useEffect(() => {
+    if (!selectedSemester) {
+      setSubjects([]);
+      setSelectedSubject("");
+      return;
     }
-  };
-  loadSemesters();
-}, []);
-
-// Fetch subjects when semester changes (safe)
-useEffect(() => {
-  if (!selectedSemester) {
-    setSubjects([]);
-    setSelectedSubject("");
-    return;
-  }
-  const loadSubjects = async () => {
-    try {
-      const res = await fetch(`/api/subjects/${selectedSemester}`);
-      const data = await res.json();
-      setSubjects(data);
-    } catch (err) {
-      console.error("Error loading subjects:", err);
-    }
-  };
-  loadSubjects();
-}, [selectedSemester]);
-
+    const loadSubjects = async () => {
+      try {
+        const res = await fetch(`/api/subjects/${selectedSemester}`);
+        const data = await res.json();
+        setSubjects(data);
+      } catch (err) {
+        console.error("Error loading subjects:", err);
+      }
+    };
+    loadSubjects();
+  }, [selectedSemester]);
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -70,6 +60,7 @@ useEffect(() => {
     }
   };
 
+  // Add semester
   const handleAddSemester = async (e) => {
     e.preventDefault();
     try {
@@ -81,15 +72,20 @@ useEffect(() => {
       if (!res.ok) throw new Error("Failed to add semester");
       setSemesterName("");
       setSemesterNumber("");
-      fetchSemesters();
+      await fetchSemesters();
       setStatus({ state: "success", message: "Semester added successfully!" });
     } catch (err) {
       setStatus({ state: "error", message: err.message });
     }
   };
 
+  // Add subject
   const handleAddSubject = async (e) => {
     e.preventDefault();
+    if (!selectedSemester) {
+      setStatus({ state: "error", message: "Select a semester first" });
+      return;
+    }
     try {
       const res = await fetch("/api/subjects", {
         method: "POST",
@@ -103,6 +99,7 @@ useEffect(() => {
       if (!res.ok) throw new Error("Failed to add subject");
       setSubjectName("");
       setSubjectCode("");
+      // Reload subjects
       const updatedSubjects = await fetch(`/api/subjects/${selectedSemester}`).then((r) => r.json());
       setSubjects(updatedSubjects);
       setStatus({ state: "success", message: "Subject added successfully!" });
@@ -111,21 +108,29 @@ useEffect(() => {
     }
   };
 
+  // Upload questions (JSON format)
   const handleUploadQuestions = async (e) => {
     e.preventDefault();
-    if (!selectedSubject || !selectedFile) {
-      setStatus({ state: "error", message: "Select subject and JSON file" });
+    if (!selectedSemester || !selectedSubject || !selectedFile) {
+      setStatus({ state: "error", message: "Select semester, subject, and JSON file" });
       return;
     }
     setStatus({ state: "uploading", message: "Uploading questions..." });
+
     const formData = new FormData();
     formData.append("questionsFile", selectedFile);
+
     try {
-      const res = await fetch(`/api/subjects/${selectedSubject}/upload`, { method: "POST", body: formData });
+      const res = await fetch(`/api/subjects/${selectedSubject}/upload`, {
+        method: "POST",
+        body: formData,
+      });
       if (!res.ok) throw new Error("Failed to upload questions");
+
       setSelectedFile(null);
       setSelectedSubject("");
       setSelectedSemester("");
+      setSubjects([]);
       setStatus({ state: "success", message: "Questions uploaded successfully!" });
     } catch (err) {
       setStatus({ state: "error", message: err.message });
@@ -161,7 +166,7 @@ useEffect(() => {
       <div className="w-full max-w-4xl bg-white rounded-3xl shadow-2xl p-8 space-y-8">
         <h2 className="text-3xl font-bold text-sky-700 text-center">Admin Panel</h2>
 
-        {/* Navbar */}
+        {/* Tabs */}
         <div className="flex justify-center space-x-6 border-b border-sky-200 mb-8">
           {["semester", "subject", "upload"].map((tab) => (
             <button
@@ -178,12 +183,12 @@ useEffect(() => {
           ))}
         </div>
 
-        {/* Tab Content */}
+        {/* Tab Contents */}
         {activeTab === "semester" && (
           <form onSubmit={handleAddSemester} className="grid gap-4">
             <input
               type="text"
-              placeholder="Semester Name (e.g., Semester 1)"
+              placeholder="Semester Name"
               value={semesterName}
               onChange={(e) => setSemesterName(e.target.value)}
               className="w-full px-4 py-3 border border-sky-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-400"
@@ -254,6 +259,7 @@ useEffect(() => {
                 </option>
               ))}
             </select>
+
             <select
               value={selectedSubject}
               onChange={(e) => setSelectedSubject(e.target.value)}
@@ -285,6 +291,7 @@ useEffect(() => {
           </form>
         )}
 
+        {/* Status Message */}
         {status.message && (
           <div className={`flex items-center gap-2 p-3 rounded-lg text-sm font-medium ${getStatusColor()}`}>
             {getStatusIcon()} <span>{status.message}</span>

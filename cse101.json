@@ -1,0 +1,2232 @@
+[
+  {
+    "questionText": "What is the primary function of a CPU in a computer system?",
+    "options": [
+      "Storing data permanently",
+      "Executing instructions and performing calculations",
+      "Displaying graphics",
+      "Connecting to the internet"
+    ],
+    "correctAnswer": "Executing instructions and performing calculations",
+    "difficulty": "easy",
+    "unitNo": 1,
+    "topic": "Basic Computer Components",
+    "createdAt": "2025-09-08T01:55:00.000Z"
+  },
+  {
+    "questionText": "Which type of memory is volatile and loses its data when the power is turned off?",
+    "options": ["ROM", "RAM", "SSD", "Hard Drive"],
+    "correctAnswer": "RAM",
+    "difficulty": "easy",
+    "unitNo": 1,
+    "topic": "Memories and its types",
+    "createdAt": "2025-09-08T01:56:00.000Z"
+  },
+  {
+    "questionText": "What is the main advantage of an SSD over an HDD?",
+    "options": [
+      "Lower cost per gigabyte",
+      "Larger storage capacity",
+      "Faster data access and boot times",
+      "More durable to physical shocks"
+    ],
+    "correctAnswer": "Faster data access and boot times",
+    "difficulty": "medium",
+    "unitNo": 1,
+    "topic": "SSD vs HDD",
+    "createdAt": "2025-09-08T01:57:00.000Z"
+  },
+  {
+    "questionText": "Which connection interface is primarily used to connect internal storage drives like SSDs and HDDs to the motherboard?",
+    "options": ["USB", "HDMI", "SATA", "NFC"],
+    "correctAnswer": "SATA",
+    "difficulty": "easy",
+    "unitNo": 1,
+    "topic": "PC connection interface",
+    "createdAt": "2025-09-08T01:58:00.000Z"
+  },
+  {
+    "questionText": "What does RAID stand for?",
+    "options": [
+      "Redundant Array of Independent Disks",
+      "Random Access Integrated Drive",
+      "Rapid Array of Input Devices",
+      "Real-time Automated Data"
+    ],
+    "correctAnswer": "Redundant Array of Independent Disks",
+    "difficulty": "medium",
+    "unitNo": 1,
+    "topic": "Introduction to RAID",
+    "createdAt": "2025-09-08T01:59:00.000Z"
+  },
+  {
+    "questionText": "A GPU is specifically designed for which task?",
+    "options": [
+      "General purpose data processing",
+      "Executing operating system commands",
+      "Rendering images, animations, and videos",
+      "Managing network connections"
+    ],
+    "correctAnswer": "Rendering images, animations, and videos",
+    "difficulty": "easy",
+    "unitNo": 1,
+    "topic": "Processors and GPU",
+    "createdAt": "2025-09-08T02:00:00.000Z"
+  },
+  {
+    "questionText": "Which of the following is a type of secondary storage device?",
+    "options": ["RAM", "CPU Cache", "Hard Disk Drive", "CPU Registers"],
+    "correctAnswer": "Hard Disk Drive",
+    "difficulty": "easy",
+    "unitNo": 1,
+    "topic": "Secondary storage devices",
+    "createdAt": "2025-09-08T02:01:00.000Z"
+  },
+  {
+    "questionText": "Which RAID level uses disk striping with parity, providing both performance and redundancy?",
+    "options": ["RAID 0", "RAID 1", "RAID 5", "RAID 10"],
+    "correctAnswer": "RAID 5",
+    "difficulty": "hard",
+    "unitNo": 1,
+    "topic": "RAID levels",
+    "createdAt": "2025-09-08T02:02:00.000Z"
+  },
+  {
+    "questionText": "What does the acronym ROM stand for?",
+    "options": [
+      "Read Only Memory",
+      "Random Only Memory",
+      "Run-on Memory",
+      "Reserved Operating Memory"
+    ],
+    "correctAnswer": "Read Only Memory",
+    "difficulty": "easy",
+    "unitNo": 1,
+    "topic": "Memories and its types",
+    "createdAt": "2025-09-08T02:03:00.000Z"
+  },
+  {
+    "questionText": "Which PC connection interface is most commonly used for external peripherals like keyboards and mice?",
+    "options": ["SATA", "HDMI", "USB", "NFC"],
+    "correctAnswer": "USB",
+    "difficulty": "easy",
+    "unitNo": 1,
+    "topic": "PC connection interface",
+    "createdAt": "2025-09-08T02:04:00.000Z"
+  },
+  {
+    "questionText": "What is the key characteristic of RAID 0?",
+    "options": [
+      "Provides data mirroring for redundancy",
+      "Distributes data across multiple disks for speed",
+      "Combines striping and mirroring",
+      "Uses parity for fault tolerance"
+    ],
+    "correctAnswer": "Distributes data across multiple disks for speed",
+    "difficulty": "medium",
+    "unitNo": 1,
+    "topic": "RAID levels",
+    "createdAt": "2025-09-08T02:05:00.000Z"
+  },
+  {
+    "questionText": "What is the difference between a CPU and a GPU?",
+    "options": [
+      "A CPU is for graphics, a GPU is for general tasks",
+      "A CPU has fewer, more powerful cores; a GPU has thousands of smaller cores",
+      "A CPU is a primary component, a GPU is a secondary component",
+      "A CPU uses RAM, a GPU uses VRAM"
+    ],
+    "correctAnswer": "A CPU has fewer, more powerful cores; a GPU has thousands of smaller cores",
+    "difficulty": "hard",
+    "unitNo": 1,
+    "topic": "Processors and GPU",
+    "createdAt": "2025-09-08T02:06:00.000Z"
+  },
+  {
+    "questionText": "What does HDMI stand for?",
+    "options": [
+      "High Definition Media Interface",
+      "Hardware Driver Manufacturing Input",
+      "Home Digital Mobile Interchange",
+      "High Data Multimedia Input"
+    ],
+    "correctAnswer": "High Definition Media Interface",
+    "difficulty": "easy",
+    "unitNo": 1,
+    "topic": "PC connection interface",
+    "createdAt": "2025-09-08T02:07:00.000Z"
+  },
+  {
+    "questionText": "Which type of memory is used to store the computer's boot instructions?",
+    "options": ["RAM", "SSD", "ROM", "HDD"],
+    "correctAnswer": "ROM",
+    "difficulty": "medium",
+    "unitNo": 1,
+    "topic": "Memories and its types",
+    "createdAt": "2025-09-08T02:08:00.000Z"
+  },
+  {
+    "questionText": "What is the primary function of a Motherboard?",
+    "options": [
+      "Powering the computer",
+      "Acting as the main circuit board to connect all components",
+      "Storing the operating system",
+      "Running applications"
+    ],
+    "correctAnswer": "Acting as the main circuit board to connect all components",
+    "difficulty": "easy",
+    "unitNo": 1,
+    "topic": "Basic Computer Components",
+    "createdAt": "2025-09-08T02:09:00.000Z"
+  },
+  {
+    "questionText": "Which RAID level provides data redundancy through mirroring?",
+    "options": ["RAID 0", "RAID 1", "RAID 5", "RAID 10"],
+    "correctAnswer": "RAID 1",
+    "difficulty": "medium",
+    "unitNo": 1,
+    "topic": "RAID levels",
+    "createdAt": "2025-09-08T02:10:00.000Z"
+  },
+  {
+    "questionText": "What is the main purpose of a secondary storage device?",
+    "options": [
+      "Holding data for the CPU to process",
+      "Providing a fast, volatile storage location",
+      "Storing data permanently, even when the power is off",
+      "Performing calculations for graphics rendering"
+    ],
+    "correctAnswer": "Storing data permanently, even when the power is off",
+    "difficulty": "easy",
+    "unitNo": 1,
+    "topic": "Secondary storage devices",
+    "createdAt": "2025-09-08T02:11:00.000Z"
+  },
+  {
+    "questionText": "Which technology allows for high-speed, short-range wireless communication between devices?",
+    "options": ["USB", "SATA", "NFC", "HDMI"],
+    "correctAnswer": "NFC",
+    "difficulty": "medium",
+    "unitNo": 1,
+    "topic": "PC connection interface",
+    "createdAt": "2025-09-08T02:12:00.000Z"
+  },
+  {
+    "questionText": "What is the function of a computer's power supply unit (PSU)?",
+    "options": [
+      "Regulating CPU temperature",
+      "Converting AC power to DC power for the components",
+      "Storing temporary data",
+      "Controlling the flow of data between components"
+    ],
+    "correctAnswer": "Converting AC power to DC power for the components",
+    "difficulty": "easy",
+    "unitNo": 1,
+    "topic": "Basic Computer Components",
+    "createdAt": "2025-09-08T02:13:00.000Z"
+  },
+  {
+    "questionText": "Which type of memory is directly accessible by the CPU and stores data and instructions for currently running programs?",
+    "options": ["SSD", "ROM", "RAM", "HDD"],
+    "correctAnswer": "RAM",
+    "difficulty": "easy",
+    "unitNo": 1,
+    "topic": "Memories and its types",
+    "createdAt": "2025-09-08T02:14:00.000Z"
+  },
+  {
+    "questionText": "What is the purpose of a heat sink and fan in a computer?",
+    "options": [
+      "To provide power to the CPU",
+      "To cool the CPU and prevent overheating",
+      "To store extra data",
+      "To improve graphics performance"
+    ],
+    "correctAnswer": "To cool the CPU and prevent overheating",
+    "difficulty": "easy",
+    "unitNo": 1,
+    "topic": "Basic Computer Components",
+    "createdAt": "2025-09-08T02:15:00.000Z"
+  },
+  {
+    "questionText": "Which component is responsible for the overall processing and execution of program instructions?",
+    "options": ["RAM", "Motherboard", "GPU", "CPU"],
+    "correctAnswer": "CPU",
+    "difficulty": "easy",
+    "unitNo": 1,
+    "topic": "Processors",
+    "createdAt": "2025-09-08T02:16:00.000Z"
+  },
+  {
+    "questionText": "Which RAID level provides both the speed of striping and the redundancy of mirroring?",
+    "options": ["RAID 0", "RAID 1", "RAID 5", "RAID 10"],
+    "correctAnswer": "RAID 10",
+    "difficulty": "hard",
+    "unitNo": 1,
+    "topic": "RAID levels",
+    "createdAt": "2025-09-08T02:17:00.000Z"
+  },
+  {
+    "questionText": "Which of these is a wireless communication interface?",
+    "options": ["SATA", "USB", "Bluetooth", "HDMI"],
+    "correctAnswer": "Bluetooth",
+    "difficulty": "easy",
+    "unitNo": 1,
+    "topic": "PC connection interface",
+    "createdAt": "2025-09-08T02:18:00.000Z"
+  },
+  {
+    "questionText": "Which RAID level does not provide any data redundancy?",
+    "options": ["RAID 0", "RAID 1", "RAID 5", "RAID 6"],
+    "correctAnswer": "RAID 0",
+    "difficulty": "medium",
+    "unitNo": 1,
+    "topic": "RAID levels",
+    "createdAt": "2025-09-08T02:19:00.000Z"
+  },
+  {
+    "questionText": "What is the primary characteristic of an HDD?",
+    "options": [
+      "It uses non-volatile flash memory",
+      "It has no moving parts",
+      "It uses a spinning platter and a read/write head",
+      "It is primarily used for temporary data"
+    ],
+    "correctAnswer": "It uses a spinning platter and a read/write head",
+    "difficulty": "medium",
+    "unitNo": 1,
+    "topic": "HDD",
+    "createdAt": "2025-09-08T02:20:00.000Z"
+  },
+  {
+    "questionText": "Which component is considered the 'brain' of the computer?",
+    "options": ["RAM", "GPU", "CPU", "Motherboard"],
+    "correctAnswer": "CPU",
+    "difficulty": "easy",
+    "unitNo": 1,
+    "topic": "Processors",
+    "createdAt": "2025-09-08T02:21:00.000Z"
+  },
+  {
+    "questionText": "What is the purpose of a computer case?",
+    "options": [
+      "To provide power",
+      "To house all internal components and protect them",
+      "To display the screen",
+      "To connect to the internet"
+    ],
+    "correctAnswer": "To house all internal components and protect them",
+    "difficulty": "easy",
+    "unitNo": 1,
+    "topic": "Basic Computer Components",
+    "createdAt": "2025-09-08T02:22:00.000Z"
+  },
+  {
+    "questionText": "Which of these is a disadvantage of using an SSD?",
+    "options": [
+      "Slower read/write speeds",
+      "Higher cost per gigabyte",
+      "More susceptible to physical damage",
+      "Requires more power"
+    ],
+    "correctAnswer": "Higher cost per gigabyte",
+    "difficulty": "medium",
+    "unitNo": 1,
+    "topic": "SSD vs HDD",
+    "createdAt": "2025-09-08T02:23:00.000Z"
+  },
+  {
+    "questionText": "What is a major advantage of using RAID for a server?",
+    "options": [
+      "It reduces the total number of disks needed",
+      "It prevents all types of malware",
+      "It increases performance, redundancy, or both",
+      "It makes the server run silently"
+    ],
+    "correctAnswer": "It increases performance, redundancy, or both",
+    "difficulty": "hard",
+    "unitNo": 1,
+    "topic": "RAID",
+    "createdAt": "2025-09-08T02:24:00.000Z"
+  },{
+    "questionText": "What is an Operating System (OS)?",
+    "options": [
+      "A piece of hardware",
+      "Software that manages computer hardware and software resources",
+      "A web browser",
+      "A type of programming language"
+    ],
+    "correctAnswer": "Software that manages computer hardware and software resources",
+    "difficulty": "easy",
+    "unitNo": 2,
+    "topic": "Operating System",
+    "createdAt": "2025-09-08T02:25:00.000Z"
+  },
+  {
+    "questionText": "Which of the following is NOT a core function of an Operating System?",
+    "options": [
+      "Process management",
+      "File management",
+      "Playing video games",
+      "Memory management"
+    ],
+    "correctAnswer": "Playing video games",
+    "difficulty": "easy",
+    "unitNo": 2,
+    "topic": "Functions of Operating System",
+    "createdAt": "2025-09-08T02:26:00.000Z"
+  },
+  {
+    "questionText": "What is a Bootloader?",
+    "options": [
+      "A program that loads the kernel into memory",
+      "A type of virus",
+      "A part of the hard drive",
+      "A user interface for the OS"
+    ],
+    "correctAnswer": "A program that loads the kernel into memory",
+    "difficulty": "medium",
+    "unitNo": 2,
+    "topic": "Bootloader",
+    "createdAt": "2025-09-08T02:27:00.000Z"
+  },
+  {
+    "questionText": "What is a Kernel in an Operating System?",
+    "options": [
+      "The user interface",
+      "The core component that manages all system resources",
+      "The boot process",
+      "An application for file management"
+    ],
+    "correctAnswer": "The core component that manages all system resources",
+    "difficulty": "medium",
+    "unitNo": 2,
+    "topic": "Kernel",
+    "createdAt": "2025-09-08T02:28:00.000Z"
+  },
+  {
+    "questionText": "What is the lowest level of computer language?",
+    "options": [
+      "High level language",
+      "Assembly language",
+      "Machine language",
+      "C++"
+    ],
+    "correctAnswer": "Machine language",
+    "difficulty": "easy",
+    "unitNo": 2,
+    "topic": "Computer Languages",
+    "createdAt": "2025-09-08T02:29:00.000Z"
+  },
+  {
+    "questionText": "What is the role of an Assembler?",
+    "options": [
+      "Translating high-level code to machine code",
+      "Executing code line by line",
+      "Translating assembly language to machine code",
+      "Converting machine code to assembly language"
+    ],
+    "correctAnswer": "Translating assembly language to machine code",
+    "difficulty": "medium",
+    "unitNo": 2,
+    "topic": "Assembler",
+    "createdAt": "2025-09-08T02:30:00.000Z"
+  },
+  {
+    "questionText": "Which language is written in binary code (0s and 1s)?",
+    "options": [
+      "Assembly language",
+      "High level language",
+      "Machine language",
+      "Python"
+    ],
+    "correctAnswer": "Machine language",
+    "difficulty": "easy",
+    "unitNo": 2,
+    "topic": "Computer Languages",
+    "createdAt": "2025-09-08T02:31:00.000Z"
+  },
+  {
+    "questionText": "What is the difference between a Compiler and an Interpreter?",
+    "options": [
+      "A compiler translates the entire program at once; an interpreter translates and executes line by line",
+      "A compiler is for low-level languages; an interpreter is for high-level languages",
+      "A compiler is faster for execution; an interpreter is faster for development",
+      "A compiler produces an executable file; an interpreter does not"
+    ],
+    "correctAnswer": "A compiler translates the entire program at once; an interpreter translates and executes line by line",
+    "difficulty": "hard",
+    "unitNo": 2,
+    "topic": "Compiler, Interpreter",
+    "createdAt": "2025-09-08T02:32:00.000Z"
+  },
+  {
+    "questionText": "What is a Monolithic Kernel?",
+    "options": [
+      "A kernel that runs entirely in user mode",
+      "A kernel where all OS services run in a single address space",
+      "A kernel that is divided into multiple modules",
+      "A kernel used only for mobile devices"
+    ],
+    "correctAnswer": "A kernel where all OS services run in a single address space",
+    "difficulty": "hard",
+    "unitNo": 2,
+    "topic": "types of Kernels",
+    "createdAt": "2025-09-08T02:33:00.000Z"
+  },
+  {
+    "questionText": "Which type of OS is designed to manage resources in real-time, often used in embedded systems?",
+    "options": [
+      "Batch OS",
+      "Distributed OS",
+      "Real-time OS",
+      "Time-sharing OS"
+    ],
+    "correctAnswer": "Real-time OS",
+    "difficulty": "medium",
+    "unitNo": 2,
+    "topic": "Types of Operating System",
+    "createdAt": "2025-09-08T02:34:00.000Z"
+  },
+  {
+    "questionText": "In the program development cycle, what step comes after 'Writing the program'?",
+    "options": [
+      "Designing the algorithm",
+      "Debugging",
+      "Compiling/Interpreting",
+      "Problem analysis"
+    ],
+    "correctAnswer": "Compiling/Interpreting",
+    "difficulty": "medium",
+    "unitNo": 2,
+    "topic": "Steps in development of a program",
+    "createdAt": "2025-09-08T02:35:00.000Z"
+  },
+  {
+    "questionText": "What is the Directory Hierarchy?",
+    "options": [
+      "A type of memory storage",
+      "The way files and folders are organized in a tree-like structure",
+      "A list of all users on a system",
+      "The core components of the OS"
+    ],
+    "correctAnswer": "The way files and folders are organized in a tree-like structure",
+    "difficulty": "easy",
+    "unitNo": 2,
+    "topic": "Directory Hierarchy",
+    "createdAt": "2025-09-08T02:36:00.000Z"
+  },
+  {
+    "questionText": "What does a Microkernel contain?",
+    "options": [
+      "All OS services in one place",
+      "Only the essential services like process and memory management",
+      "Only the user interface components",
+      "Nothing, it's just a communication link"
+    ],
+    "correctAnswer": "Only the essential services like process and memory management",
+    "difficulty": "hard",
+    "unitNo": 2,
+    "topic": "types of Kernels",
+    "createdAt": "2025-09-08T02:37:00.000Z"
+  },
+  {
+    "questionText": "Which language is closest to the hardware but uses mnemonics instead of binary?",
+    "options": [
+      "High level language",
+      "Machine language",
+      "Assembly language",
+      "Python"
+    ],
+    "correctAnswer": "Assembly language",
+    "difficulty": "medium",
+    "unitNo": 2,
+    "topic": "Computer Languages",
+    "createdAt": "2025-09-08T02:38:00.000Z"
+  },
+  {
+    "questionText": "What is the output of a compiler?",
+    "options": [
+      "An interpreted program",
+      "A list of errors",
+      "An executable file or object code",
+      "Source code"
+    ],
+    "correctAnswer": "An executable file or object code",
+    "difficulty": "easy",
+    "unitNo": 2,
+    "topic": "Compiler",
+    "createdAt": "2025-09-08T02:39:00.000Z"
+  },
+  {
+    "questionText": "What is a 'Batch' Operating System?",
+    "options": [
+      "One that can execute multiple programs at the same time",
+      "One that handles all user requests interactively",
+      "One that processes jobs in batches without user interaction",
+      "One that is used for network servers"
+    ],
+    "correctAnswer": "One that processes jobs in batches without user interaction",
+    "difficulty": "medium",
+    "unitNo": 2,
+    "topic": "Types of Operating System",
+    "createdAt": "2025-09-08T02:40:00.000Z"
+  },
+  {
+    "questionText": "Which OS architecture is a combination of both monolithic and microkernel architectures?",
+    "options": [
+      "Hybrid Kernel",
+      "Exokernel",
+      "Nanokernel",
+      "Unikernel"
+    ],
+    "correctAnswer": "Hybrid Kernel",
+    "difficulty": "hard",
+    "unitNo": 2,
+    "topic": "types of Kernels",
+    "createdAt": "2025-09-08T02:41:00.000Z"
+  },
+  {
+    "questionText": "What is the purpose of memory management in an OS?",
+    "options": [
+      "To allocate and deallocate memory space to various programs",
+      "To store files permanently",
+      "To manage network connections",
+      "To create new processes"
+    ],
+    "correctAnswer": "To allocate and deallocate memory space to various programs",
+    "difficulty": "medium",
+    "unitNo": 2,
+    "topic": "Functions of Operating System",
+    "createdAt": "2025-09-08T02:42:00.000Z"
+  },
+  {
+    "questionText": "In a directory hierarchy, which directory is at the top of the tree?",
+    "options": ["bin", "home", "root", "dev"],
+    "correctAnswer": "root",
+    "difficulty": "easy",
+    "unitNo": 2,
+    "topic": "Directory Hierarchy",
+    "createdAt": "2025-09-08T02:43:00.000Z"
+  },
+  {
+    "questionText": "A program written in a high-level language is called:",
+    "options": [
+      "Object code",
+      "Source code",
+      "Executable code",
+      "Machine code"
+    ],
+    "correctAnswer": "Source code",
+    "difficulty": "easy",
+    "unitNo": 2,
+    "topic": "Computer Languages",
+    "createdAt": "2025-09-08T02:44:00.000Z"
+  },
+  {
+    "questionText": "Which of these is a function of an OS?",
+    "options": [
+      "User interface management",
+      "Code debugging",
+      "Running a web server",
+      "Creating new databases"
+    ],
+    "correctAnswer": "User interface management",
+    "difficulty": "easy",
+    "unitNo": 2,
+    "topic": "Functions of Operating System",
+    "createdAt": "2025-09-08T02:45:00.000Z"
+  },
+  {
+    "questionText": "Which of the following is an example of a high-level language?",
+    "options": [
+      "Binary code",
+      "Assembly",
+      "Python",
+      "Mnemonics"
+    ],
+    "correctAnswer": "Python",
+    "difficulty": "easy",
+    "unitNo": 2,
+    "topic": "High level language",
+    "createdAt": "2025-09-08T02:46:00.000Z"
+  },
+  {
+    "questionText": "What is the purpose of the 'Execution' step in program development?",
+    "options": [
+      "To write the code",
+      "To translate the code",
+      "To run the compiled or interpreted code",
+      "To find errors in the code"
+    ],
+    "correctAnswer": "To run the compiled or interpreted code",
+    "difficulty": "medium",
+    "unitNo": 2,
+    "topic": "Compilation and Execution",
+    "createdAt": "2025-09-08T02:47:00.000Z"
+  },
+  {
+    "questionText": "What is a 'Time-sharing' Operating System?",
+    "options": [
+      "An OS for a single user",
+      "An OS that processes jobs in batches",
+      "An OS that allows multiple users to share a computer simultaneously",
+      "An OS for distributed systems"
+    ],
+    "correctAnswer": "An OS that allows multiple users to share a computer simultaneously",
+    "difficulty": "medium",
+    "unitNo": 2,
+    "topic": "Types of Operating System",
+    "createdAt": "2025-09-08T02:48:00.000Z"
+  },
+  {
+    "questionText": "Which kernel type is known for its modularity and portability?",
+    "options": [
+      "Monolithic",
+      "Microkernel",
+      "Hybrid",
+      "Exokernel"
+    ],
+    "correctAnswer": "Microkernel",
+    "difficulty": "hard",
+    "unitNo": 2,
+    "topic": "types of Kernels",
+    "createdAt": "2025-09-08T02:49:00.000Z"
+  },
+  {
+    "questionText": "The file system is a function of which component?",
+    "options": [
+      "Hardware",
+      "Application software",
+      "Operating System",
+      "Network"
+    ],
+    "correctAnswer": "Operating System",
+    "difficulty": "easy",
+    "unitNo": 2,
+    "topic": "Operating System",
+    "createdAt": "2025-09-08T02:50:00.000Z"
+  },
+  {
+    "questionText": "Which of the following is NOT a high-level programming language?",
+    "options": ["C++", "Java", "Assembly", "Python"],
+    "correctAnswer": "Assembly",
+    "difficulty": "easy",
+    "unitNo": 2,
+    "topic": "High level language",
+    "createdAt": "2025-09-08T02:51:00.000Z"
+  },
+  {
+    "questionText": "The process of converting source code into an executable program is called:",
+    "options": [
+      "Interpretation",
+      "Execution",
+      "Compilation",
+      "Bootstrapping"
+    ],
+    "correctAnswer": "Compilation",
+    "difficulty": "medium",
+    "unitNo": 2,
+    "topic": "Compilation",
+    "createdAt": "2025-09-08T02:52:00.000Z"
+  },
+  {
+    "questionText": "Which part of the OS is responsible for managing file access and permissions?",
+    "options": [
+      "The Kernel",
+      "The User Interface",
+      "The File System",
+      "The Bootloader"
+    ],
+    "correctAnswer": "The File System",
+    "difficulty": "medium",
+    "unitNo": 2,
+    "topic": "Functions of Operating System",
+    "createdAt": "2025-09-08T02:53:00.000Z"
+  },
+  {
+    "questionText": "In a Distributed OS, where are the computations processed?",
+    "options": [
+      "On a single machine",
+      "On a centralized server",
+      "On multiple interconnected machines",
+      "On a dedicated graphics card"
+    ],
+    "correctAnswer": "On multiple interconnected machines",
+    "difficulty": "medium",
+    "unitNo": 2,
+    "topic": "Types of Operating System",
+    "createdAt": "2025-09-08T02:54:00.000Z"
+  },{
+    "questionText": "Which command is used to list files and directories in a Linux terminal?",
+    "options": ["cat", "ls", "cd", "pwd"],
+    "correctAnswer": "ls",
+    "difficulty": "easy",
+    "unitNo": 3,
+    "topic": "Shell commands",
+    "createdAt": "2025-09-08T02:55:00.000Z"
+  },
+  {
+    "questionText": "What does the command `pwd` stand for?",
+    "options": [
+      "Print Working Directory",
+      "Password",
+      "Previous Directory",
+      "Present Window"
+    ],
+    "correctAnswer": "Print Working Directory",
+    "difficulty": "easy",
+    "unitNo": 3,
+    "topic": "Shell commands",
+    "createdAt": "2025-09-08T02:56:00.000Z"
+  },
+  {
+    "questionText": "Which Linux command is used to change the permissions of a file?",
+    "options": ["ls", "chmod", "chown", "mv"],
+    "correctAnswer": "chmod",
+    "difficulty": "medium",
+    "unitNo": 3,
+    "topic": "Shell commands",
+    "createdAt": "2025-09-08T02:57:00.000Z"
+  },
+  {
+    "questionText": "What is the primary difference between a hard link and a symbolic link in Linux?",
+    "options": [
+      "A symbolic link is a pointer to the inode, a hard link is a pointer to the file name",
+      "A hard link is a pointer to the inode, a symbolic link is a pointer to the file name",
+      "Hard links can cross file systems, symbolic links cannot",
+      "Symbolic links cannot be used for directories"
+    ],
+    "correctAnswer": "A hard link is a pointer to the inode, a symbolic link is a pointer to the file name",
+    "difficulty": "hard",
+    "unitNo": 3,
+    "topic": "Linux OS",
+    "createdAt": "2025-09-08T02:58:00.000Z"
+  },
+  {
+    "questionText": "Which of the following is a key feature of the Linux Operating System?",
+    "options": [
+      "It is proprietary and closed-source",
+      "It is primarily a single-user OS",
+      "It is an open-source and free OS",
+      "It is exclusively used for gaming"
+    ],
+    "correctAnswer": "It is an open-source and free OS",
+    "difficulty": "easy",
+    "unitNo": 3,
+    "topic": "Linux OS",
+    "createdAt": "2025-09-08T02:59:00.000Z"
+  },
+  {
+    "questionText": "What does the command `rm -r` do?",
+    "options": [
+      "Removes a single file",
+      "Removes a directory and its contents recursively",
+      "Renames a file",
+      "Creates a new directory"
+    ],
+    "correctAnswer": "Removes a directory and its contents recursively",
+    "difficulty": "medium",
+    "unitNo": 3,
+    "topic": "Shell commands",
+    "createdAt": "2025-09-08T03:00:00.000Z"
+  },
+  {
+    "questionText": "Which command is used to create a new, empty file in Linux?",
+    "options": ["touch", "mkdir", "cat >", "newfile"],
+    "correctAnswer": "touch",
+    "difficulty": "easy",
+    "unitNo": 3,
+    "topic": "Shell commands",
+    "createdAt": "2025-09-08T03:01:00.000Z"
+  },
+  {
+    "questionText": "What is the purpose of a Virtual Machine (VM)?",
+    "options": [
+      "To improve the graphics performance of a computer",
+      "To create a virtualized hardware environment to run another OS",
+      "To store data permanently",
+      "To manage network connections"
+    ],
+    "correctAnswer": "To create a virtualized hardware environment to run another OS",
+    "difficulty": "easy",
+    "unitNo": 3,
+    "topic": "Virtual Machine",
+    "createdAt": "2025-09-08T03:02:00.000Z"
+  },
+  {
+    "questionText": "Which Linux command is used to read the content of a file?",
+    "options": ["cat", "ls", "read", "view"],
+    "correctAnswer": "cat",
+    "difficulty": "easy",
+    "unitNo": 3,
+    "topic": "Shell commands",
+    "createdAt": "2025-09-08T03:03:00.000Z"
+  },
+  {
+    "questionText": "What is the primary function of a file system?",
+    "options": [
+      "To manage user accounts and privileges",
+      "To provide an application programming interface (API)",
+      "To control network traffic",
+      "To manage the organization, storage, and retrieval of data"
+    ],
+    "correctAnswer": "To manage the organization, storage, and retrieval of data",
+    "difficulty": "medium",
+    "unitNo": 3,
+    "topic": "File system basics",
+    "createdAt": "2025-09-08T03:04:00.000Z"
+  },
+  {
+    "questionText": "Which command is used to change the current working directory in Linux?",
+    "options": ["ls", "cd", "mkdir", "pwd"],
+    "correctAnswer": "cd",
+    "difficulty": "easy",
+    "unitNo": 3,
+    "topic": "Shell commands",
+    "createdAt": "2025-09-08T03:05:00.000Z"
+  },
+  {
+    "questionText": "Which type of file system is primarily used by Windows?",
+    "options": ["FAT", "HFS", "NTFS", "ext4"],
+    "correctAnswer": "NTFS",
+    "difficulty": "medium",
+    "unitNo": 3,
+    "topic": "Types of file system",
+    "createdAt": "2025-09-08T03:06:00.000Z"
+  },
+  {
+    "questionText": "Which command is used to remove an empty directory?",
+    "options": ["rmdir", "rm -r", "del", "remove"],
+    "correctAnswer": "rmdir",
+    "difficulty": "easy",
+    "unitNo": 3,
+    "topic": "Shell commands",
+    "createdAt": "2025-09-08T03:07:00.000Z"
+  },
+  {
+    "questionText": "What is the main purpose of the `man` command?",
+    "options": [
+      "To create a new directory",
+      "To display the manual pages for a command",
+      "To remove a file",
+      "To change file permissions"
+    ],
+    "correctAnswer": "To display the manual pages for a command",
+    "difficulty": "easy",
+    "unitNo": 3,
+    "topic": "Shell commands",
+    "createdAt": "2025-09-08T03:08:00.000Z"
+  },
+  {
+    "questionText": "Which Linux command is used to copy a file or directory?",
+    "options": ["cp", "mv", "copy", "cat"],
+    "correctAnswer": "cp",
+    "difficulty": "easy",
+    "unitNo": 3,
+    "topic": "Shell commands",
+    "createdAt": "2025-09-08T03:09:00.000Z"
+  },
+  {
+    "questionText": "What is a major difference between Windows and Linux operating systems?",
+    "options": [
+      "Windows is open-source; Linux is proprietary",
+      "Linux uses a graphical user interface (GUI) only; Windows is command-line based",
+      "Linux is a multi-user OS by design; Windows is primarily single-user",
+      "Linux is free and open-source; Windows is a paid, proprietary OS"
+    ],
+    "correctAnswer": "Linux is free and open-source; Windows is a paid, proprietary OS",
+    "difficulty": "medium",
+    "unitNo": 3,
+    "topic": "Comparison of windows and Linux OS",
+    "createdAt": "2025-09-08T03:10:00.000Z"
+  },
+  {
+    "questionText": "Which command is used to move or rename a file?",
+    "options": ["cp", "mv", "move", "rename"],
+    "correctAnswer": "mv",
+    "difficulty": "easy",
+    "unitNo": 3,
+    "topic": "Shell commands",
+    "createdAt": "2025-09-08T03:11:00.000Z"
+  },
+  {
+    "questionText": "What does the `ps` command do?",
+    "options": [
+      "Displays running processes",
+      "Lists files in a directory",
+      "Changes file permissions",
+      "Creates a new file"
+    ],
+    "correctAnswer": "Displays running processes",
+    "difficulty": "medium",
+    "unitNo": 3,
+    "topic": "Shell commands",
+    "createdAt": "2025-09-08T03:12:00.000Z"
+  },
+  {
+    "questionText": "What is the purpose of the `kill` command?",
+    "options": [
+      "To delete a file",
+      "To stop a running process",
+      "To terminate the terminal session",
+      "To shut down the computer"
+    ],
+    "correctAnswer": "To stop a running process",
+    "difficulty": "medium",
+    "unitNo": 3,
+    "topic": "Shell commands",
+    "createdAt": "2025-09-08T03:13:00.000Z"
+  },
+  {
+    "questionText": "What does `chmod 755 filename` grant?",
+    "options": [
+      "Read-only access for all users",
+      "Full permissions for the owner, and read/execute for group/others",
+      "No permissions for anyone",
+      "Execute-only permissions for the owner"
+    ],
+    "correctAnswer": "Full permissions for the owner, and read/execute for group/others",
+    "difficulty": "hard",
+    "unitNo": 3,
+    "topic": "Shell commands",
+    "createdAt": "2025-09-08T03:14:00.000Z"
+  },
+  {
+    "questionText": "Which file system is a journaled file system used by Linux?",
+    "options": ["FAT", "NTFS", "ext4", "HFS"],
+    "correctAnswer": "ext4",
+    "difficulty": "medium",
+    "unitNo": 3,
+    "topic": "Types of file system",
+    "createdAt": "2025-09-08T03:15:00.000Z"
+  },
+  {
+    "questionText": "What is the role of a hypervisor in a Virtual Machine environment?",
+    "options": [
+      "It is a type of guest OS",
+      "It is the physical server where VMs run",
+      "It creates and manages VMs",
+      "It stores the VM's files"
+    ],
+    "correctAnswer": "It creates and manages VMs",
+    "difficulty": "medium",
+    "unitNo": 3,
+    "topic": "VM software",
+    "createdAt": "2025-09-08T03:16:00.000Z"
+  },
+  {
+    "questionText": "Which Linux command is used to make a new directory?",
+    "options": ["mkdir", "touch", "create", "newdir"],
+    "correctAnswer": "mkdir",
+    "difficulty": "easy",
+    "unitNo": 3,
+    "topic": "Shell commands",
+    "createdAt": "2025-09-08T03:17:00.000Z"
+  },
+  {
+    "questionText": "What is a Linux 'Distribution'?",
+    "options": [
+      "A specific version of the Linux kernel",
+      "A complete operating system built on the Linux kernel and other software",
+      "A type of Linux server",
+      "A command-line tool for Linux"
+    ],
+    "correctAnswer": "A complete operating system built on the Linux kernel and other software",
+    "difficulty": "easy",
+    "unitNo": 3,
+    "topic": "Distribution versions",
+    "createdAt": "2025-09-08T03:18:00.000Z"
+  },
+  {
+    "questionText": "What does the `chown` command change?",
+    "options": [
+      "File permissions",
+      "File ownership",
+      "File name",
+      "File size"
+    ],
+    "correctAnswer": "File ownership",
+    "difficulty": "hard",
+    "unitNo": 3,
+    "topic": "Shell commands",
+    "createdAt": "2025-09-08T03:19:00.000Z"
+  },
+  {
+    "questionText": "Which file system is used by macOS?",
+    "options": ["NTFS", "HFS+", "FAT32", "ext4"],
+    "correctAnswer": "HFS+",
+    "difficulty": "medium",
+    "unitNo": 3,
+    "topic": "Types of file system",
+    "createdAt": "2025-09-08T03:20:00.000Z"
+  },
+  {
+    "questionText": "Which command is used to change the current directory to the parent directory?",
+    "options": ["cd /", "cd ..", "cd ~", "cd -"],
+    "correctAnswer": "cd ..",
+    "difficulty": "easy",
+    "unitNo": 3,
+    "topic": "Shell commands",
+    "createdAt": "2025-09-08T03:21:00.000Z"
+  },
+  {
+    "questionText": "What is the primary difference between `rm` and `rmdir`?",
+    "options": [
+      "`rm` removes files, `rmdir` removes empty directories",
+      "`rm` removes directories, `rmdir` removes files",
+      "They are the same command",
+      "`rm` is for Windows, `rmdir` is for Linux"
+    ],
+    "correctAnswer": "`rm` removes files, `rmdir` removes empty directories",
+    "difficulty": "medium",
+    "unitNo": 3,
+    "topic": "Shell commands",
+    "createdAt": "2025-09-08T03:22:00.000Z"
+  },
+  {
+    "questionText": "What does the `F` in FAT file system stand for?",
+    "options": [
+      "File Allocation Table",
+      "File Access Type",
+      "Flexible Arrangement Technology",
+      "Fast Application Type"
+    ],
+    "correctAnswer": "File Allocation Table",
+    "difficulty": "medium",
+    "unitNo": 3,
+    "topic": "Types of file system",
+    "createdAt": "2025-09-08T03:23:00.000Z"
+  },
+  {
+    "questionText": "Which command is used to display a process tree?",
+    "options": ["ps -aux", "top", "pstree", "processes"],
+    "correctAnswer": "pstree",
+    "difficulty": "hard",
+    "unitNo": 3,
+    "topic": "Shell commands",
+    "createdAt": "2025-09-08T03:24:00.000Z"
+  },{
+    "questionText": "What is the primary purpose of a 'Cohort' in an educational or professional context?",
+    "options": [
+      "To create a competitive environment",
+      "To group people with similar goals for collaborative learning",
+      "To provide individual one-on-one mentorship",
+      "To teach a single specific skill"
+    ],
+    "correctAnswer": "To group people with similar goals for collaborative learning",
+    "difficulty": "easy",
+    "unitNo": 4,
+    "topic": "Introduction to Cohorts",
+    "createdAt": "2025-09-08T03:25:00.000Z"
+  },
+  {
+    "questionText": "Which of the following is an example of a skill set for a 'Cloud Computing' cohort?",
+    "options": [
+      "Machine learning algorithms",
+      "Network security protocols",
+      "Web development frameworks",
+      "AWS, Azure, and Google Cloud Platform"
+    ],
+    "correctAnswer": "AWS, Azure, and Google Cloud Platform",
+    "difficulty": "easy",
+    "unitNo": 4,
+    "topic": "Cloud Computing",
+    "createdAt": "2025-09-08T03:26:00.000Z"
+  },
+  {
+    "questionText": "What is a 'Pathway' in a career context?",
+    "options": [
+      "A specific company's name",
+      "A linear, step-by-step career progression",
+      "A professional network",
+      "A type of technical interview"
+    ],
+    "correctAnswer": "A linear, step-by-step career progression",
+    "difficulty": "easy",
+    "unitNo": 4,
+    "topic": "Introduction to Pathways",
+    "createdAt": "2025-09-08T03:27:00.000Z"
+  },
+  {
+    "questionText": "Which job role would be part of the 'Data Science' pathway?",
+    "options": [
+      "Front-end Developer",
+      "DevOps Engineer",
+      "Data Analyst",
+      "Network Administrator"
+    ],
+    "correctAnswer": "Data Analyst",
+    "difficulty": "easy",
+    "unitNo": 4,
+    "topic": "Job Roles for Different Pathways",
+    "createdAt": "2025-09-08T03:28:00.000Z"
+  },
+  {
+    "questionText": "What does MOOC stand for?",
+    "options": [
+      "Massive Open Online Course",
+      "Modern Onsite Organized Class",
+      "Mobile Only Online Curriculum",
+      "Management of Online Communication"
+    ],
+    "correctAnswer": "Massive Open Online Course",
+    "difficulty": "easy",
+    "unitNo": 4,
+    "topic": "MOOCs",
+    "createdAt": "2025-09-08T03:29:00.000Z"
+  },
+  {
+    "questionText": "What is the primary purpose of a 'Hackathon'?",
+    "options": [
+      "A competition to hack into computer systems",
+      "An event where participants collaborate to create a project under time pressure",
+      "A forum for discussing ethical hacking",
+      "A seminar for software engineers"
+    ],
+    "correctAnswer": "An event where participants collaborate to create a project under time pressure",
+    "difficulty": "medium",
+    "unitNo": 4,
+    "topic": "Hackathons",
+    "createdAt": "2025-09-08T03:30:00.000Z"
+  },
+  {
+    "questionText": "Which company is part of the MAANG group?",
+    "options": ["Netflix", "Amazon", "Twitter", "IBM"],
+    "correctAnswer": "Amazon",
+    "difficulty": "easy",
+    "unitNo": 4,
+    "topic": "MAANG Companies",
+    "createdAt": "2025-09-08T03:31:00.000Z"
+  },
+  {
+    "questionText": "Which skill set is essential for a 'Cyber Security' cohort?",
+    "options": [
+      "Data analysis with R",
+      "Front-end frameworks like React",
+      "Ethical hacking and network defense",
+      "Database design with SQL"
+    ],
+    "correctAnswer": "Ethical hacking and network defense",
+    "difficulty": "easy",
+    "unitNo": 4,
+    "topic": "Cyber Security Cohorts",
+    "createdAt": "2025-09-08T03:32:00.000Z"
+  },
+  {
+    "questionText": "What is a major benefit of taking a MOOC?",
+    "options": [
+      "It guarantees a job after completion",
+      "It is always free",
+      "It provides access to a structured learning environment from anywhere",
+      "It is a mandatory requirement for all university students"
+    ],
+    "correctAnswer": "It provides access to a structured learning environment from anywhere",
+    "difficulty": "medium",
+    "unitNo": 4,
+    "topic": "Benefits of MOOCs",
+    "createdAt": "2025-09-08T03:33:00.000Z"
+  },
+  {
+    "questionText": "Which type of pathway is focused on working at companies that create and sell a product, rather than a service?",
+    "options": [
+      "Service Based",
+      "Product Based",
+      "Government Jobs",
+      "Entrepreneurship"
+    ],
+    "correctAnswer": "Product Based",
+    "difficulty": "medium",
+    "unitNo": 4,
+    "topic": "Types of Pathways",
+    "createdAt": "2025-09-08T03:34:00.000Z"
+  },
+  {
+    "questionText": "What kind of projects are typically created in a 'Full Stack Web Development' cohort?",
+    "options": [
+      "Mobile games",
+      "End-to-end web applications",
+      "Only the front-end design of a website",
+      "Only the back-end database"
+    ],
+    "correctAnswer": "End-to-end web applications",
+    "difficulty": "easy",
+    "unitNo": 4,
+    "topic": "Full Stack Web Development",
+    "createdAt": "2025-09-08T03:35:00.000Z"
+  },
+  {
+    "questionText": "What is a 'Service Based' pathway?",
+    "options": [
+      "Working for a company that provides services to other businesses",
+      "Starting your own business",
+      "Working for a government agency",
+      "Working on internal tools for a company"
+    ],
+    "correctAnswer": "Working for a company that provides services to other businesses",
+    "difficulty": "medium",
+    "unitNo": 4,
+    "topic": "Types of Pathways",
+    "createdAt": "2025-09-08T03:36:00.000Z"
+  },
+  {
+    "questionText": "Which platform is a well-known MOOC provider?",
+    "options": ["TikTok", "Coursera", "LinkedIn", "Instagram"],
+    "correctAnswer": "Coursera",
+    "difficulty": "easy",
+    "unitNo": 4,
+    "topic": "Various MOOCs Platforms",
+    "createdAt": "2025-09-08T03:37:00.000Z"
+  },
+  {
+    "questionText": "What is a key difference between a service-based company and a product-based company?",
+    "options": [
+      "Service-based companies build and sell their own products",
+      "Product-based companies primarily work on projects for clients",
+      "Service-based companies sell their expertise and time, while product-based companies sell a physical or digital product",
+      "There is no major difference"
+    ],
+    "correctAnswer": "Service-based companies sell their expertise and time, while product-based companies sell a physical or digital product",
+    "difficulty": "hard",
+    "unitNo": 4,
+    "topic": "Product Based, Service Based",
+    "createdAt": "2025-09-08T03:38:00.000Z"
+  },
+  {
+    "questionText": "Which of the following would be considered an 'Entrepreneurship' pathway?",
+    "options": [
+      "Working as a senior engineer at a large corporation",
+      "Creating and running your own startup",
+      "Working for the government",
+      "Getting a PhD in computer science"
+    ],
+    "correctAnswer": "Creating and running your own startup",
+    "difficulty": "easy",
+    "unitNo": 4,
+    "topic": "Entrepreneurship",
+    "createdAt": "2025-09-08T03:39:00.000Z"
+  },
+  {
+    "questionText": "What is a common skill required for a 'Machine Learning' cohort?",
+    "options": [
+      "Graphic design",
+      "Creating business reports",
+      "Proficiency in Python and statistical modeling",
+      "Cybersecurity protocols"
+    ],
+    "correctAnswer": "Proficiency in Python and statistical modeling",
+    "difficulty": "medium",
+    "unitNo": 4,
+    "topic": "Machine Learning",
+    "createdAt": "2025-09-08T03:40:00.000Z"
+  },
+  {
+    "questionText": "Which of these is a globally recognized Hackathon?",
+    "options": ["Google I/O", "Facebook F8", "TechCrunch Disrupt Hackathon", "Apple WWDC"],
+    "correctAnswer": "TechCrunch Disrupt Hackathon",
+    "difficulty": "medium",
+    "unitNo": 4,
+    "topic": "Globally Recognized Hackathons and Competitions",
+    "createdAt": "2025-09-08T03:41:00.000Z"
+  },
+  {
+    "questionText": "What is the primary goal of a 'Software Methodologies and Testing' cohort?",
+    "options": [
+      "To build software from scratch",
+      "To learn about project management and ensuring software quality",
+      "To design user interfaces",
+      "To market and sell software"
+    ],
+    "correctAnswer": "To learn about project management and ensuring software quality",
+    "difficulty": "medium",
+    "unitNo": 4,
+    "topic": "Software Methodologies and Testing",
+    "createdAt": "2025-09-08T03:42:00.000Z"
+  },
+  {
+    "questionText": "What is the purpose of a 'Teaching and Research' pathway?",
+    "options": [
+      "To work in a corporate setting",
+      "To train the next generation of professionals and contribute to new knowledge",
+      "To build software for commercial use",
+      "To manage large teams"
+    ],
+    "correctAnswer": "To train the next generation of professionals and contribute to new knowledge",
+    "difficulty": "easy",
+    "unitNo": 4,
+    "topic": "Teaching and Research",
+    "createdAt": "2025-09-08T03:43:00.000Z"
+  },
+  {
+    "questionText": "Which of the following is NOT a type of MOOC?",
+    "options": [
+      "cMOOC (Connectivist)",
+      "xMOOC (Extended)",
+      "MOOC-for-profit",
+      "tMOOC (Technical)"
+    ],
+    "correctAnswer": "tMOOC (Technical)",
+    "difficulty": "hard",
+    "unitNo": 4,
+    "topic": "Types of MOOCs",
+    "createdAt": "2025-09-08T03:44:00.000Z"
+  },
+  {
+    "questionText": "What is the key difference between an internal and external skill source?",
+    "options": [
+      "Internal skills are from the internet; external skills are from books",
+      "Internal skills are learned within the company; external skills are learned from external training or platforms",
+      "Internal skills are for personal growth; external skills are for professional growth",
+      "There is no difference"
+    ],
+    "correctAnswer": "Internal skills are learned within the company; external skills are learned from external training or platforms",
+    "difficulty": "medium",
+    "unitNo": 4,
+    "topic": "skill sources",
+    "createdAt": "2025-09-08T03:45:00.000Z"
+  },
+  {
+    "questionText": "What does the 'A' in MAANG stand for?",
+    "options": ["Apple", "Amazon", "Alphabet", "Adobe"],
+    "correctAnswer": "Amazon",
+    "difficulty": "easy",
+    "unitNo": 4,
+    "topic": "MAANG Companies",
+    "createdAt": "2025-09-08T03:46:00.000Z"
+  },
+  {
+    "questionText": "Which of these is a major MOOC platform?",
+    "options": ["Udemy", "LinkedIn", "GitHub", "Stack Overflow"],
+    "correctAnswer": "Udemy",
+    "difficulty": "easy",
+    "unitNo": 4,
+    "topic": "Various MOOCs Platforms",
+    "createdAt": "2025-09-08T03:47:00.000Z"
+  },
+  {
+    "questionText": "A person interested in working for a government agency would follow which pathway?",
+    "options": [
+      "Product Based",
+      "Service Based",
+      "Government Jobs",
+      "Entrepreneurship"
+    ],
+    "correctAnswer": "Government Jobs",
+    "difficulty": "easy",
+    "unitNo": 4,
+    "topic": "Types of Pathways",
+    "createdAt": "2025-09-08T03:48:00.000Z"
+  },
+  {
+    "questionText": "What kind of skills would be most important for a 'Cyber Security' cohort?",
+    "options": [
+      "SQL and Database management",
+      "Networking and threat analysis",
+      "Web design and UX",
+      "Cloud architecture and deployment"
+    ],
+    "correctAnswer": "Networking and threat analysis",
+    "difficulty": "medium",
+    "unitNo": 4,
+    "topic": "Cyber Security Cohorts",
+    "createdAt": "2025-09-08T03:49:00.000Z"
+  },
+  {
+    "questionText": "What is the primary focus of 'Higher Studies' as a pathway?",
+    "options": [
+      "Directly joining the workforce",
+      "Continuing education, often in the form of a Master's or PhD",
+      "Starting a new business venture",
+      "Working for a government organization"
+    ],
+    "correctAnswer": "Continuing education, often in the form of a Master's or PhD",
+    "difficulty": "easy",
+    "unitNo": 4,
+    "topic": "Higher studies",
+    "createdAt": "2025-09-08T03:50:00.000Z"
+  },
+  {
+    "questionText": "Which of these is a popular MOOC platform?",
+    "options": ["Spotify", "Udacity", "Netflix", "Hulu"],
+    "correctAnswer": "Udacity",
+    "difficulty": "easy",
+    "unitNo": 4,
+    "topic": "Various MOOCs Platforms",
+    "createdAt": "2025-09-08T03:51:00.000Z"
+  },
+  {
+    "questionText": "Which of these is a benefit of participating in a Hackathon?",
+    "options": [
+      "Guaranteed prize money",
+      "Networking and rapid skill development",
+      "Receiving a formal university degree",
+      "Completing a full-scale, production-ready project"
+    ],
+    "correctAnswer": "Networking and rapid skill development",
+    "difficulty": "medium",
+    "unitNo": 4,
+    "topic": "Benefits of MOOCs and Hackathons",
+    "createdAt": "2025-09-08T03:52:00.000Z"
+  },
+  {
+    "questionText": "Which of the following best describes a 'Data Science' cohort?",
+    "options": [
+      "A group focused on building mobile applications",
+      "A group focused on analyzing and interpreting complex data",
+      "A group focused on designing user interfaces",
+      "A group focused on network security"
+    ],
+    "correctAnswer": "A group focused on analyzing and interpreting complex data",
+    "difficulty": "easy",
+    "unitNo": 4,
+    "topic": "Data Science",
+    "createdAt": "2025-09-08T03:53:00.000Z"
+  },
+  {
+    "questionText": "What is the main goal of a 'Software Development' cohort?",
+    "options": [
+      "To learn about project management",
+      "To write and deploy production-level code",
+      "To design marketing campaigns for software",
+      "To research new computer science algorithms"
+    ],
+    "correctAnswer": "To write and deploy production-level code",
+    "difficulty": "easy",
+    "unitNo": 4,
+    "topic": "Software development",
+    "createdAt": "2025-09-08T03:54:00.000Z"
+  },{
+    "questionText": "What is a 'Computer Network'?",
+    "options": [
+      "A single computer with multiple applications",
+      "Two or more computers connected to share resources",
+      "A type of operating system",
+      "A storage device for files"
+    ],
+    "correctAnswer": "Two or more computers connected to share resources",
+    "difficulty": "easy",
+    "unitNo": 5,
+    "topic": "Computer Network",
+    "createdAt": "2025-09-08T03:55:00.000Z"
+  },
+  {
+    "questionText": "Which network topology connects all devices to a single central cable?",
+    "options": ["Star", "Ring", "Bus", "Mesh"],
+    "correctAnswer": "Bus",
+    "difficulty": "medium",
+    "unitNo": 5,
+    "topic": "Network topologies",
+    "createdAt": "2025-09-08T03:56:00.000Z"
+  },
+  {
+    "questionText": "What is the primary function of a 'Router'?",
+    "options": [
+      "To connect devices within a single network",
+      "To connect different networks and route data packets between them",
+      "To broadcast data to all connected devices",
+      "To convert analog signals to digital signals"
+    ],
+    "correctAnswer": "To connect different networks and route data packets between them",
+    "difficulty": "easy",
+    "unitNo": 5,
+    "topic": "Network communication devices",
+    "createdAt": "2025-09-08T03:57:00.000Z"
+  },
+  {
+    "questionText": "What is a 'Modem' used for?",
+    "options": [
+      "To connect two different networks",
+      "To connect devices to a local network",
+      "To modulate and demodulate signals for internet access",
+      "To amplify network signals"
+    ],
+    "correctAnswer": "To modulate and demodulate signals for internet access",
+    "difficulty": "easy",
+    "unitNo": 5,
+    "topic": "Network communication devices",
+    "createdAt": "2025-09-08T03:58:00.000Z"
+  },
+  {
+    "questionText": "Which type of malware disguises itself as a legitimate program?",
+    "options": ["Virus", "Worm", "Trojan horse", "Spyware"],
+    "correctAnswer": "Trojan horse",
+    "difficulty": "medium",
+    "unitNo": 5,
+    "topic": "Malwares and its types",
+    "createdAt": "2025-09-08T03:59:00.000Z"
+  },
+  {
+    "questionText": "What is 'Phishing'?",
+    "options": [
+      "A type of virus that encrypts files",
+      "A physical attack on a computer",
+      "A deceptive attempt to obtain sensitive information by impersonating a trustworthy entity",
+      "A program that creates a backdoor"
+    ],
+    "correctAnswer": "A deceptive attempt to obtain sensitive information by impersonating a trustworthy entity",
+    "difficulty": "easy",
+    "unitNo": 5,
+    "topic": "Phishing",
+    "createdAt": "2025-09-08T04:00:00.000Z"
+  },
+  {
+    "questionText": "What is the purpose of 'Multi-Factor Authentication'?",
+    "options": [
+      "To use a single password for multiple accounts",
+      "To require two or more verification factors to gain access to a resource",
+      "To store passwords in a single location",
+      "To protect against physical theft of a device"
+    ],
+    "correctAnswer": "To require two or more verification factors to gain access to a resource",
+    "difficulty": "medium",
+    "unitNo": 5,
+    "topic": "Multi Factor authentication",
+    "createdAt": "2025-09-08T04:01:00.000Z"
+  },
+  {
+    "questionText": "What is the primary role of a 'Firewall'?",
+    "options": [
+      "To protect against physical theft",
+      "To filter network traffic based on security rules",
+      "To speed up internet connection",
+      "To manage user accounts"
+    ],
+    "correctAnswer": "To filter network traffic based on security rules",
+    "difficulty": "easy",
+    "unitNo": 5,
+    "topic": "Firewall basics",
+    "createdAt": "2025-09-08T04:02:00.000Z"
+  },
+  {
+    "questionText": "Which of these is a local network?",
+    "options": ["LAN", "WAN", "Internet", "VPN"],
+    "correctAnswer": "LAN",
+    "difficulty": "easy",
+    "unitNo": 5,
+    "topic": "Network types",
+    "createdAt": "2025-09-08T04:03:00.000Z"
+  },
+  {
+    "questionText": "In the Client-Server model, what is the role of the client?",
+    "options": [
+      "To provide services to other computers",
+      "To request services from the server",
+      "To store all the data",
+      "To connect two different networks"
+    ],
+    "correctAnswer": "To request services from the server",
+    "difficulty": "medium",
+    "unitNo": 5,
+    "topic": "Client Server Model",
+    "createdAt": "2025-09-08T04:04:00.000Z"
+  },
+  {
+    "questionText": "Which type of malware can spread from computer to computer without a host program?",
+    "options": ["Virus", "Worm", "Trojan horse", "Spyware"],
+    "correctAnswer": "Worm",
+    "difficulty": "medium",
+    "unitNo": 5,
+    "topic": "Malwares and its types",
+    "createdAt": "2025-09-08T04:05:00.000Z"
+  },
+  {
+    "questionText": "What is 'Ransomware'?",
+    "options": [
+      "Malware that spreads through emails",
+      "Malware that encrypts files and demands payment for their release",
+      "Malware that steals passwords",
+      "Malware that spies on user activity"
+    ],
+    "correctAnswer": "Malware that encrypts files and demands payment for their release",
+    "difficulty": "medium",
+    "unitNo": 5,
+    "topic": "Ransomware",
+    "createdAt": "2025-09-08T04:06:00.000Z"
+  },
+  {
+    "questionText": "What is the purpose of a 'Switch' in a network?",
+    "options": [
+      "To broadcast data to all devices",
+      "To connect multiple devices and forward data to a specific device",
+      "To manage user accounts",
+      "To convert analog signals"
+    ],
+    "correctAnswer": "To connect multiple devices and forward data to a specific device",
+    "difficulty": "medium",
+    "unitNo": 5,
+    "topic": "Network communication devices",
+    "createdAt": "2025-09-08T04:07:00.000Z"
+  },
+  {
+    "questionText": "Which type of user account has the most control over a computer system?",
+    "options": ["Guest", "User", "Admin", "Restricted"],
+    "correctAnswer": "Admin",
+    "difficulty": "easy",
+    "unitNo": 5,
+    "topic": "User Account Types and Privileges",
+    "createdAt": "2025-09-08T04:08:00.000Z"
+  },
+  {
+    "questionText": "What is the primary difference between a Hub and a Switch?",
+    "options": [
+      "A Hub is faster than a Switch",
+      "A Hub broadcasts data to all ports; a Switch sends data only to the intended destination",
+      "A Hub is more expensive than a Switch",
+      "A Switch can only be used in a Star topology"
+    ],
+    "correctAnswer": "A Hub broadcasts data to all ports; a Switch sends data only to the intended destination",
+    "difficulty": "hard",
+    "unitNo": 5,
+    "topic": "Network communication devices",
+    "createdAt": "2025-09-08T04:09:00.000Z"
+  },
+  {
+    "questionText": "Which type of user account is typically used for a one-time use or for visitors to a computer?",
+    "options": ["Admin", "Standard User", "Guest", "Root"],
+    "correctAnswer": "Guest",
+    "difficulty": "easy",
+    "unitNo": 5,
+    "topic": "User Account Types and Privileges",
+    "createdAt": "2025-09-08T04:10:00.000Z"
+  },
+  {
+    "questionText": "What is 'Spyware'?",
+    "options": [
+      "A virus that corrupts files",
+      "Software that secretly monitors and collects user information",
+      "A program that creates a backdoor",
+      "A malicious program that replicates itself"
+    ],
+    "correctAnswer": "Software that secretly monitors and collects user information",
+    "difficulty": "medium",
+    "unitNo": 5,
+    "topic": "Malwares and its types",
+    "createdAt": "2025-09-08T04:11:00.000Z"
+  },
+  {
+    "questionText": "Which network topology has every device connected to every other device?",
+    "options": ["Star", "Ring", "Bus", "Mesh"],
+    "correctAnswer": "Mesh",
+    "difficulty": "hard",
+    "unitNo": 5,
+    "topic": "Network topologies",
+    "createdAt": "2025-09-08T04:12:00.000Z"
+  },
+  {
+    "questionText": "What is the difference between a Virus and a Worm?",
+    "options": [
+      "A virus requires a host program to spread; a worm can spread on its own",
+      "A virus only affects a single file; a worm affects the whole system",
+      "A worm is a type of virus",
+      "A virus can be stopped by a firewall; a worm cannot"
+    ],
+    "correctAnswer": "A virus requires a host program to spread; a worm can spread on its own",
+    "difficulty": "hard",
+    "unitNo": 5,
+    "topic": "Malwares and its types",
+    "createdAt": "2025-09-08T04:13:00.000Z"
+  },
+  {
+    "questionText": "What is 'Password cracking'?",
+    "options": [
+      "The process of creating a strong password",
+      "A method of recovering a lost password",
+      "The process of regaining access to a forgotten password",
+      "The process of discovering passwords through brute-force or dictionary attacks"
+    ],
+    "correctAnswer": "The process of discovering passwords through brute-force or dictionary attacks",
+    "difficulty": "easy",
+    "unitNo": 5,
+    "topic": "Password cracking",
+    "createdAt": "2025-09-08T04:14:00.000Z"
+  },
+  {
+    "questionText": "Which network communication device is used to connect a home network to an ISP?",
+    "options": ["Router", "Switch", "Hub", "Modem"],
+    "correctAnswer": "Modem",
+    "difficulty": "easy",
+    "unitNo": 5,
+    "topic": "Network communication devices",
+    "createdAt": "2025-09-08T04:15:00.000Z"
+  },
+  {
+    "questionText": "Which type of attack involves a user being tricked into visiting a fake website to enter their credentials?",
+    "options": ["Ransomware", "Phishing", "Worm", "Trojan horse"],
+    "correctAnswer": "Phishing",
+    "difficulty": "easy",
+    "unitNo": 5,
+    "topic": "Phishing",
+    "createdAt": "2025-09-08T04:16:00.000Z"
+  },
+  {
+    "questionText": "What is the main function of an 'Access Point'?",
+    "options": [
+      "To connect wired networks",
+      "To provide wireless connectivity for devices",
+      "To filter network traffic",
+      "To convert analog signals"
+    ],
+    "correctAnswer": "To provide wireless connectivity for devices",
+    "difficulty": "medium",
+    "unitNo": 5,
+    "topic": "Network communication devices",
+    "createdAt": "2025-09-08T04:17:00.000Z"
+  },
+  {
+    "questionText": "In a Star topology, what happens if the central hub fails?",
+    "options": [
+      "The entire network goes down",
+      "Only the connected device goes down",
+      "The network continues to function normally",
+      "The data is re-routed through a different path"
+    ],
+    "correctAnswer": "The entire network goes down",
+    "difficulty": "hard",
+    "unitNo": 5,
+    "topic": "Network topologies",
+    "createdAt": "2025-09-08T04:18:00.000Z"
+  },
+  {
+    "questionText": "Which of these is NOT a type of malware?",
+    "options": ["Virus", "Firewall", "Trojan horse", "Spyware"],
+    "correctAnswer": "Firewall",
+    "difficulty": "easy",
+    "unitNo": 5,
+    "topic": "Malwares",
+    "createdAt": "2025-09-08T04:19:00.000Z"
+  },
+  {
+    "questionText": "What is the purpose of 'privileges' in a user account?",
+    "options": [
+      "To define the user's password",
+      "To determine what a user is allowed to do on the system",
+      "To set the user's profile picture",
+      "To track user activity"
+    ],
+    "correctAnswer": "To determine what a user is allowed to do on the system",
+    "difficulty": "easy",
+    "unitNo": 5,
+    "topic": "User Account Types and Privileges",
+    "createdAt": "2025-09-08T04:20:00.000Z"
+  },
+  {
+    "questionText": "Which of these is a common component of a firewall rule?",
+    "options": ["Source and destination IP address", "User's password", "File name", "Type of malware"],
+    "correctAnswer": "Source and destination IP address",
+    "difficulty": "medium",
+    "unitNo": 5,
+    "topic": "Firewall basics",
+    "createdAt": "2025-09-08T04:21:00.000Z"
+  },
+  {
+    "questionText": "What is a 'WAN'?",
+    "options": [
+      "A local area network",
+      "A wide area network that spans a large geographical area",
+      "A network of only two computers",
+      "A wireless access network"
+    ],
+    "correctAnswer": "A wide area network that spans a large geographical area",
+    "difficulty": "easy",
+    "unitNo": 5,
+    "topic": "Network types",
+    "createdAt": "2025-09-08T04:22:00.000Z"
+  },
+  {
+    "questionText": "Which of the following is a security threat that can be mitigated by using strong, unique passwords?",
+    "options": ["Phishing", "Malware", "Password cracking", "Ransomware"],
+    "correctAnswer": "Password cracking",
+    "difficulty": "medium",
+    "unitNo": 5,
+    "topic": "Password cracking",
+    "createdAt": "2025-09-08T04:23:00.000Z"
+  },
+  {
+    "questionText": "What is the primary function of a server in the Client-Server Model?",
+    "options": [
+      "To request resources from the client",
+      "To act as a central hub for all connections",
+      "To provide resources and services to clients",
+      "To create new network users"
+    ],
+    "correctAnswer": "To provide resources and services to clients",
+    "difficulty": "easy",
+    "unitNo": 5,
+    "topic": "Client Server Model",
+    "createdAt": "2025-09-08T04:24:00.000Z"
+  },{
+    "questionText": "What is the primary purpose of 'Version Control'?",
+    "options": [
+      "To create a new project",
+      "To track and manage changes to code over time",
+      "To write new code",
+      "To share code with a single person"
+    ],
+    "correctAnswer": "To track and manage changes to code over time",
+    "difficulty": "easy",
+    "unitNo": 6,
+    "topic": "Version Control",
+    "createdAt": "2025-09-08T04:25:00.000Z"
+  },
+  {
+    "questionText": "What does the command `git commit` do?",
+    "options": [
+      "Pushes changes to a remote repository",
+      "Stages a file for a commit",
+      "Records changes to the repository with a message",
+      "Creates a new branch"
+    ],
+    "correctAnswer": "Records changes to the repository with a message",
+    "difficulty": "medium",
+    "unitNo": 6,
+    "topic": "Creating a commit",
+    "createdAt": "2025-09-08T04:26:00.000Z"
+  },
+  {
+    "questionText": "What is the difference between Git and GitHub?",
+    "options": [
+      "Git is a web-based hosting service; GitHub is a version control system",
+      "They are the same thing",
+      "Git is a distributed version control system; GitHub is a platform to host Git repositories",
+      "Git is for solo projects; GitHub is for team projects"
+    ],
+    "correctAnswer": "Git is a distributed version control system; GitHub is a platform to host Git repositories",
+    "difficulty": "medium",
+    "unitNo": 6,
+    "topic": "Git and GitHub",
+    "createdAt": "2025-09-08T04:27:00.000Z"
+  },
+  {
+    "questionText": "What is a 'local git repository'?",
+    "options": [
+      "A repository stored on a remote server",
+      "A copy of the repository stored on your computer",
+      "A branch of the main repository",
+      "A new file created with Git"
+    ],
+    "correctAnswer": "A copy of the repository stored on your computer",
+    "difficulty": "easy",
+    "unitNo": 6,
+    "topic": "create a local git repository",
+    "createdAt": "2025-09-08T04:28:00.000Z"
+  },
+  {
+    "questionText": "Which AI trend focuses on creating new, original content?",
+    "options": [
+      "Predictive AI",
+      "Generative AI",
+      "Analytic AI",
+      "Conversational AI"
+    ],
+    "correctAnswer": "Generative AI",
+    "difficulty": "easy",
+    "unitNo": 6,
+    "topic": "Generative AI",
+    "createdAt": "2025-09-08T04:29:00.000Z"
+  },
+  {
+    "questionText": "What is 'Prompt Engineering'?",
+    "options": [
+      "The process of creating a new AI model",
+      "The art of crafting effective prompts for a generative AI tool",
+      "The study of AI hardware components",
+      "The process of debugging AI code"
+    ],
+    "correctAnswer": "The art of crafting effective prompts for a generative AI tool",
+    "difficulty": "medium",
+    "unitNo": 6,
+    "topic": "Prompt Engineering",
+    "createdAt": "2025-09-08T04:30:00.000Z"
+  },
+  {
+    "questionText": "Which of these is a widely-used profile creation platform for developers to showcase their coding skills?",
+    "options": ["Figma", "HackerRank", "GitHub", "Stack overflow"],
+    "correctAnswer": "HackerRank",
+    "difficulty": "easy",
+    "unitNo": 6,
+    "topic": "Profile Creation",
+    "createdAt": "2025-09-08T04:31:00.000Z"
+  },
+  {
+    "questionText": "What is the purpose of a 'Branch' in Git?",
+    "options": [
+      "To merge changes from another repository",
+      "To create a new file in the repository",
+      "To allow for isolated development without affecting the main codebase",
+      "To delete a file from the repository"
+    ],
+    "correctAnswer": "To allow for isolated development without affecting the main codebase",
+    "difficulty": "medium",
+    "unitNo": 6,
+    "topic": "Creation of a new Branch Profile",
+    "createdAt": "2025-09-08T04:32:00.000Z"
+  },
+  {
+    "questionText": "What is an ethical concern regarding the use of AI tools?",
+    "options": [
+      "They are too expensive to use",
+      "They generate content too slowly",
+      "They can perpetuate and amplify existing biases",
+      "They cannot be used for commercial purposes"
+    ],
+    "correctAnswer": "They can perpetuate and amplify existing biases",
+    "difficulty": "medium",
+    "unitNo": 6,
+    "topic": "Ethical use of AI",
+    "createdAt": "2025-09-08T04:33:00.000Z"
+  },
+  {
+    "questionText": "Which command is used to add a new file to a Git repository's staging area?",
+    "options": ["git add", "git commit", "git push", "git init"],
+    "correctAnswer": "git add",
+    "difficulty": "easy",
+    "unitNo": 6,
+    "topic": "add a new file to the repository",
+    "createdAt": "2025-09-08T04:34:00.000Z"
+  },
+  {
+    "questionText": "What does `git init` do?",
+    "options": [
+      "Clones a repository",
+      "Initializes a new local git repository",
+      "Pushes changes to a remote",
+      "Adds a file to staging"
+    ],
+    "correctAnswer": "Initializes a new local git repository",
+    "difficulty": "easy",
+    "unitNo": 6,
+    "topic": "create a local git repository",
+    "createdAt": "2025-09-08T04:35:00.000Z"
+  },
+  {
+    "questionText": "Which platform is a popular tool for UI/UX design and prototyping?",
+    "options": ["GitHub", "Figma", "Stack Overflow", "HackerRank"],
+    "correctAnswer": "Figma",
+    "difficulty": "easy",
+    "unitNo": 6,
+    "topic": "Profile Creation",
+    "createdAt": "2025-09-08T04:36:00.000Z"
+  },
+  {
+    "questionText": "Which AI tool is designed for text generation?",
+    "options": ["DALL-E", "ChatGPT", "Midjourney", "Perplexity AI"],
+    "correctAnswer": "ChatGPT",
+    "difficulty": "easy",
+    "unitNo": 6,
+    "topic": "Text Generation Tools",
+    "createdAt": "2025-09-08T04:37:00.000Z"
+  },
+  {
+    "questionText": "What is a 'good' prompt for a text-generation AI tool?",
+    "options": [
+      "A short, one-word prompt",
+      "A long, vague prompt",
+      "A specific, detailed, and clear prompt",
+      "A prompt with many grammatical errors"
+    ],
+    "correctAnswer": "A specific, detailed, and clear prompt",
+    "difficulty": "medium",
+    "unitNo": 6,
+    "topic": "Prompt Engineering",
+    "createdAt": "2025-09-08T04:38:00.000Z"
+  },
+  {
+    "questionText": "What does a 'commit' in Git represent?",
+    "options": [
+      "A final, unchangeable version of the code",
+      "A snapshot of the repository at a specific point in time",
+      "A single file in the repository",
+      "A command to clone a project"
+    ],
+    "correctAnswer": "A snapshot of the repository at a specific point in time",
+    "difficulty": "medium",
+    "unitNo": 6,
+    "topic": "Creating a commit",
+    "createdAt": "2025-09-08T04:39:00.000Z"
+  },
+  {
+    "questionText": "Which of these platforms is a popular Q&A site for programmers?",
+    "options": ["GeeksforGeeks", "HackerEarth", "Stack Overflow", "Figma"],
+    "correctAnswer": "Stack Overflow",
+    "difficulty": "easy",
+    "unitNo": 6,
+    "topic": "Profile Creation",
+    "createdAt": "2025-09-08T04:40:00.000Z"
+  },
+  {
+    "questionText": "What is the primary difference between Perplexity AI and ChatGPT?",
+    "options": [
+      "Perplexity AI is a text generator, ChatGPT is an image generator",
+      "Perplexity AI is a conversational search engine, ChatGPT is a general-purpose chatbot",
+      "Perplexity AI is a code generator, ChatGPT is a research tool",
+      "There is no difference"
+    ],
+    "correctAnswer": "Perplexity AI is a conversational search engine, ChatGPT is a general-purpose chatbot",
+    "difficulty": "hard",
+    "unitNo": 6,
+    "topic": "Research Tools",
+    "createdAt": "2025-09-08T04:41:00.000Z"
+  },
+  {
+    "questionText": "Which platform is known for coding challenges and competitions?",
+    "options": ["Figma", "GitHub", "LeetCode", "Fiverr"],
+    "correctAnswer": "LeetCode",
+    "difficulty": "easy",
+    "unitNo": 6,
+    "topic": "Profile Creation",
+    "createdAt": "2025-09-08T04:42:00.000Z"
+  },
+  {
+    "questionText": "What does a 'Branch' allow a developer to do?",
+    "options": [
+      "Work on new features without affecting the main line of development",
+      "Delete old code from the repository",
+      "Copy the entire repository to a new location",
+      "Push changes to the main branch"
+    ],
+    "correctAnswer": "Work on new features without affecting the main line of development",
+    "difficulty": "easy",
+    "unitNo": 6,
+    "topic": "Creation of a new Branch",
+    "createdAt": "2025-09-08T04:43:00.000Z"
+  },
+  {
+    "questionText": "What is the primary difference between AI and Generative AI?",
+    "options": [
+      "AI is for simple tasks, Generative AI is for complex tasks",
+      "AI is the broad field; Generative AI is a subfield focused on creating new content",
+      "AI is used in research, Generative AI is used in industry",
+      "There is no difference"
+    ],
+    "correctAnswer": "AI is the broad field; Generative AI is a subfield focused on creating new content",
+    "difficulty": "medium",
+    "unitNo": 6,
+    "topic": "AI vs Generative AI",
+    "createdAt": "2025-09-08T04:44:00.000Z"
+  },
+  {
+    "questionText": "What is the purpose of a 'GitHub' profile?",
+    "options": [
+      "To write professional resumes",
+      "To showcase your personal portfolio and project contributions",
+      "To find a job",
+      "To manage your social media presence"
+    ],
+    "correctAnswer": "To showcase your personal portfolio and project contributions",
+    "difficulty": "easy",
+    "unitNo": 6,
+    "topic": "Profile Creation",
+    "createdAt": "2025-09-08T04:45:00.000Z"
+  },
+  {
+    "questionText": "What is the purpose of 'Figma'?",
+    "options": [
+      "A version control system",
+      "An IDE for coding",
+      "A collaborative interface design tool",
+      "A project management tool"
+    ],
+    "correctAnswer": "A collaborative interface design tool",
+    "difficulty": "easy",
+    "unitNo": 6,
+    "topic": "Profile Creation",
+    "createdAt": "2025-09-08T04:46:00.000Z"
+  },
+  {
+    "questionText": "What is 'Prompt Engineering' primarily concerned with?",
+    "options": [
+      "Optimizing the performance of an AI model",
+      "Creating clear and effective instructions for AI models",
+      "Designing the hardware for AI systems",
+      "Analyzing the output of an AI model"
+    ],
+    "correctAnswer": "Creating clear and effective instructions for AI models",
+    "difficulty": "medium",
+    "unitNo": 6,
+    "topic": "Prompt Engineering",
+    "createdAt": "2025-09-08T04:47:00.000Z"
+  },
+  {
+    "questionText": "Which of these is a popular tool for generating images using AI?",
+    "options": ["ChatGPT", "Gemini AI", "Midjourney", "Notion"],
+    "correctAnswer": "Midjourney",
+    "difficulty": "medium",
+    "unitNo": 6,
+    "topic": "Image Generation Tools",
+    "createdAt": "2025-09-08T04:48:00.000Z"
+  },
+  {
+    "questionText": "What is the purpose of a `git push` command?",
+    "options": [
+      "To download changes from a remote repository",
+      "To upload local changes to a remote repository",
+      "To delete a branch",
+      "To create a new commit"
+    ],
+    "correctAnswer": "To upload local changes to a remote repository",
+    "difficulty": "easy",
+    "unitNo": 6,
+    "topic": "Version Control",
+    "createdAt": "2025-09-08T04:49:00.000Z"
+  },
+  {
+    "questionText": "What is a 'bad' prompt for an AI?",
+    "options": [
+      "A specific prompt with context",
+      "A short, ambiguous prompt",
+      "A detailed prompt with clear instructions",
+      "A prompt that asks for multiple things"
+    ],
+    "correctAnswer": "A short, ambiguous prompt",
+    "difficulty": "easy",
+    "unitNo": 6,
+    "topic": "Prompt Engineering",
+    "createdAt": "2025-09-08T04:50:00.000Z"
+  },
+  {
+    "questionText": "Which platform is a popular tool for competitive programming?",
+    "options": ["Figma", "Stack Overflow", "HackerEarth", "GitHub"],
+    "correctAnswer": "HackerEarth",
+    "difficulty": "medium",
+    "unitNo": 6,
+    "topic": "Profile Creation",
+    "createdAt": "2025-09-08T04:51:00.000Z"
+  },
+  {
+    "questionText": "What is the purpose of a 'pull request' in Git/GitHub?",
+    "options": [
+      "To delete a branch",
+      "To request that your changes be reviewed and merged into another branch",
+      "To create a new repository",
+      "To push changes to the main branch"
+    ],
+    "correctAnswer": "To request that your changes be reviewed and merged into another branch",
+    "difficulty": "hard",
+    "unitNo": 6,
+    "topic": "Git and GitHub",
+    "createdAt": "2025-09-08T04:52:00.000Z"
+  },
+  {
+    "questionText": "What is the main purpose of `Perplexity AI`?",
+    "options": [
+      "To generate images",
+      "To provide conversational answers with sources from the web",
+      "To write computer code",
+      "To create video animations"
+    ],
+    "correctAnswer": "To provide conversational answers with sources from the web",
+    "difficulty": "medium",
+    "unitNo": 6,
+    "topic": "Research Tools",
+    "createdAt": "2025-09-08T04:53:00.000Z"
+  },
+  {
+    "questionText": "Which platform is primarily a code-hosting service and a social network for developers?",
+    "options": ["Figma", "HackerRank", "Stack Overflow", "GitHub"],
+    "correctAnswer": "GitHub",
+    "difficulty": "easy",
+    "unitNo": 6,
+    "topic": "Git and GitHub",
+    "createdAt": "2025-09-08T04:54:00.000Z"
+  }
+]
