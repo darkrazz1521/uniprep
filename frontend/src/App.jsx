@@ -1,14 +1,14 @@
 import { Routes, Route } from "react-router-dom";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
+// HIGHLIGHT: Import motion
+// eslint-disable-next-line no-unused-vars
+import { motion, AnimatePresence } from "framer-motion";
 
 import LoginPage from "./pages/LoginPage.jsx";
 import RegisterPage from "./pages/RegisterPage.jsx";
 import SemesterPage from "./pages/SemesterPage.jsx";
 import QuestionBankPage from "./pages/QuestionBankPage.jsx";
 import AdminPage from "./pages/AdminPage.jsx";
-
-
-
 
 // --- Reusable SVG Icon Components ---
 const LogoIcon = () => (
@@ -27,78 +27,61 @@ const LogoIcon = () => (
         />
     </svg>
 );
-const HamburgerIcon = () => (
-    <svg
-        className="block h-6 w-6"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        aria-hidden="true"
+
+// HIGHLIGHT: Wrap HamburgerIcon in motion.button for animation
+const HamburgerIcon = ({ isMobileMenuOpen, onClick }) => (
+    <motion.button
+        onClick={onClick}
+        initial={{ rotate: 0 }}
+        animate={{ rotate: isMobileMenuOpen ? 90 : 0 }}
+        transition={{ duration: 0.2 }}
+        className="inline-flex items-center justify-center p-2 rounded-md text-slate-500 hover:text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500"
     >
-        <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M4 6h16M4 12h16m-4 6h4"
-        />
-    </svg>
+        <svg
+            className="block h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+        >
+            {/* Animate path d change for Hamburger/X-icon feel (optional, but professional) */}
+            <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-4 6h4"}
+            />
+        </svg>
+    </motion.button>
 );
 
 
-// --- Custom Hook for Animations ---
-const useIntersectionObserver = (options) => {
-    const containerRef = useRef(null);
-    useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("animate-in");
-                }
-            });
-        }, options);
-
-        const container = containerRef.current;
-        if (container) {
-            Array.from(container.children).forEach((child) =>
-                observer.observe(child)
-            );
-        }
-        return () => {
-            if (container) {
-                Array.from(container.children).forEach((child) =>
-                    observer.unobserve(child)
-                );
-            }
-        };
-    }, [containerRef, options]);
-    return containerRef;
-};
-
-
-
-
-
+// --- Custom Hook for Animations (Removed as Framer Motion is used) ---
+// const useIntersectionObserver = (options) => { ... };
 
 // --- Header ---
 const Header = ({ onNavClick, user, currentPage, handleLogout }) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const NavLink = ({ page, children }) => (
-        <a
+        // HIGHLIGHT: Use motion.a for hover/tap effects
+        <motion.a
             href="#"
-            className={`transition-colors duration-300 ${currentPage === page
-                ? "active-nav text-sky-500"
-                : "text-slate-600 hover:text-sky-500"
+            className={`transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium ${currentPage === page
+                ? "active-nav text-sky-500 bg-sky-50/50"
+                : "text-slate-600 hover:text-sky-500 hover:bg-slate-50"
                 }`}
             onClick={(e) => {
                 e.preventDefault();
                 onNavClick(page);
                 setIsMobileMenuOpen(false);
             }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
         >
             {children}
-        </a>
+        </motion.a>
     );
 
     return (
@@ -114,12 +97,19 @@ const Header = ({ onNavClick, user, currentPage, handleLogout }) => {
                             onNavClick("home");
                         }}
                     >
-                        <LogoIcon />
+                        {/* HIGHLIGHT: Wrap LogoIcon in motion.div */}
+                        <motion.div
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                        >
+                            <LogoIcon />
+                        </motion.div>
                         <span className="text-2xl font-bold text-slate-800">UniPrep</span>
                     </a>
 
                     {/* Desktop Nav */}
-                    <div className="hidden md:flex md:items-center md:space-x-8">
+                    <div className="hidden md:flex md:items-center md:space-x-4">
                         {user?.role === "admin" ? (
                             <NavLink page="admin">Admin</NavLink>
                         ) : (
@@ -136,130 +126,145 @@ const Header = ({ onNavClick, user, currentPage, handleLogout }) => {
                         {user ? (
                             <>
                                 {user?.role !== "admin" && (
-                                    <a
-                                        href="#"
-                                        onClick={(e) => {
-                                            e.preventDefault();
-                                            onNavClick("dashboard");
-                                        }}
-                                        className="px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 rounded-lg transition-colors duration-300"
-                                    >
-                                        Dashboard
-                                    </a>
+                                    <NavLink page="dashboard">Dashboard</NavLink>
                                 )}
-                                <button
+                                {/* HIGHLIGHT: Use motion.button for Logout */}
+                                <motion.button
                                     onClick={handleLogout}
                                     className="px-4 py-2 text-sm font-medium text-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 bg-red-500 hover:bg-red-600 transition-all duration-300"
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
                                 >
                                     Logout
-                                </button>
+                                </motion.button>
                             </>
                         ) : (
                             <>
-                                <a
-                                    href="#"
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        onNavClick("login");
-                                    }}
-                                    className="px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 rounded-lg transition-colors duration-300"
-                                >
-                                    Login
-                                </a>
-                                <a
+                                <NavLink page="login">Login</NavLink>
+                                {/* HIGHLIGHT: Use motion.a for Register */}
+                                <motion.a
                                     href="#"
                                     onClick={(e) => {
                                         e.preventDefault();
                                         onNavClick("register");
                                     }}
                                     className="px-4 py-2 text-sm font-medium text-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 transition-all duration-300 gradient-btn"
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
                                 >
                                     Register
-                                </a>
+                                </motion.a>
                             </>
                         )}
                     </div>
 
-                    {/* Mobile Menu Button */}
+                    {/* Mobile Menu Button - Now uses the updated component */}
                     <div className="md:hidden flex items-center">
-                        <button
+                        <HamburgerIcon
+                            isMobileMenuOpen={isMobileMenuOpen}
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            className="inline-flex items-center justify-center p-2 rounded-md text-slate-500 hover:text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500"
-                        >
-                            <HamburgerIcon />
-                        </button>
+                        />
                     </div>
                 </div>
 
                 {/* Mobile Menu */}
-                {isMobileMenuOpen && (
-                    <div className="md:hidden px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        {user?.role === "admin" ? (
-                            <>
-                                <NavLink page="admin">Admin</NavLink>
-                                <button
-                                    onClick={() => {
-                                        handleLogout();
-                                        setIsMobileMenuOpen(false);
-                                    }}
-                                    className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-white bg-red-500 hover:bg-red-600"
-                                >
-                                    Logout
-                                </button>
-                            </>
-                        ) : (
-                            <>
-                                <NavLink page="home">Home</NavLink>
-                                <NavLink page="semesters">Semesters</NavLink>
-                                <NavLink page="about">About</NavLink>
-                                {user ? (
-                                    <>
-                                        <NavLink page="dashboard">Dashboard</NavLink>
-                                        <button
-                                            onClick={() => {
-                                                handleLogout();
-                                                setIsMobileMenuOpen(false);
-                                            }}
-                                            className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-white bg-red-500 hover:bg-red-600"
-                                        >
-                                            Logout
-                                        </button>
-                                    </>
-                                ) : (
-                                    <>
-                                        <NavLink page="login">Login</NavLink>
-                                        <NavLink page="register">Register</NavLink>
-                                    </>
-                                )}
-                            </>
-                        )}
-                    </div>
-                )}
+                {/* HIGHLIGHT: Use AnimatePresence and motion.div for slide/fade in mobile menu */}
+                <AnimatePresence>
+                    {isMobileMenuOpen && (
+                        <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="md:hidden px-2 pt-2 pb-3 space-y-1 sm:px-3 overflow-hidden border-t border-slate-100"
+                        >
+                            {user?.role === "admin" ? (
+                                <>
+                                    <NavLink page="admin">Admin</NavLink>
+                                    <motion.button // HIGHLIGHT: Use motion.button
+                                        onClick={() => {
+                                            handleLogout();
+                                            setIsMobileMenuOpen(false);
+                                        }}
+                                        className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-white bg-red-500 hover:bg-red-600"
+                                        whileTap={{ scale: 0.98 }}
+                                    >
+                                        Logout
+                                    </motion.button>
+                                </>
+                            ) : (
+                                <>
+                                    <NavLink page="home">Home</NavLink>
+                                    <NavLink page="semesters">Semesters</NavLink>
+                                    <NavLink page="about">About</NavLink>
+                                    {user ? (
+                                        <>
+                                            <NavLink page="dashboard">Dashboard</NavLink>
+                                            <motion.button // HIGHLIGHT: Use motion.button
+                                                onClick={() => {
+                                                    handleLogout();
+                                                    setIsMobileMenuOpen(false);
+                                                }}
+                                                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-white bg-red-500 hover:bg-red-600"
+                                                whileTap={{ scale: 0.98 }}
+                                            >
+                                                Logout
+                                            </motion.button>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <NavLink page="login">Login</NavLink>
+                                            <NavLink page="register">Register</NavLink>
+                                        </>
+                                    )}
+                                </>
+                            )}
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </nav>
         </header>
     );
 };
 
-const FeatureCard = ({ icon, title, children, delay }) => (
-    <div
-        className="text-center p-6 feature-card"
-        style={{ animationDelay: delay }}
+// HIGHLIGHT: Updated FeatureCard to use Framer Motion
+const FeatureCard = ({ icon, title, children, index }) => (
+    <motion.div
+        className="text-center p-6 bg-white rounded-xl shadow-lg border border-slate-100 feature-card hover:shadow-2xl transition-shadow"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: index * 0.1 }}
     >
         <div className="flex items-center justify-center h-16 w-16 rounded-2xl bg-sky-100 text-sky-500 mx-auto mb-4">
             {icon}
         </div>
         <h3 className="text-xl font-semibold text-slate-800">{title}</h3>
         <p className="mt-2 text-slate-500">{children}</p>
-    </div>
+    </motion.div>
 );
 
 // --- Page Components ---
 
 const HomePage = ({ onNavClick, semesters }) => {
-    const featuresRef = useIntersectionObserver({ threshold: 0.1 });
+    // const featuresRef = useIntersectionObserver({ threshold: 0.1 }); // REMOVED
+    const semesterVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.05,
+            },
+        },
+    };
+
+    const itemVariants = {
+        hidden: { y: 20, opacity: 0 },
+        visible: { y: 0, opacity: 1, transition: { duration: 0.3 } },
+    };
+
     return (
         <section id="home" className="page active relative overflow-hidden">
-            {/* Animated floating background */}
+            {/* Animated floating background (Keep CSS animations) */}
             <div className="absolute inset-0 pointer-events-none z-0">
                 <div
                     className="absolute top-0 left-1/2 transform -translate-x-1/2 blur-2xl opacity-40 animate-float-slow"
@@ -284,17 +289,35 @@ const HomePage = ({ onNavClick, semesters }) => {
             <div className="relative z-10 text-center py-20 md:py-28 overflow-hidden rounded-3xl bg-white/80 backdrop-blur-xl shadow-xl border border-slate-100">
                 <div className="absolute inset-0 bg-grid-slate-200 [mask-image:linear-gradient(to_bottom,white,transparent)]"></div>
                 <div className="relative">
-                    <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight">
+                    {/* HIGHLIGHT: Use motion.h1 for a professional drop-in effect */}
+                    <motion.h1
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                        className="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight"
+                    >
                         Your Exam{" "}
                         <span className="animated-gradient-text bg-gradient-to-r from-sky-500 via-cyan-400 to-pink-400 text-transparent bg-clip-text">
                             Companion
                         </span>
-                    </h1>
-                    <p className="mt-4 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
+                    </motion.h1>
+                    {/* HIGHLIGHT: Use motion.p */}
+                    <motion.p
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                        className="mt-4 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto"
+                    >
                         Practice End-Term Questions Semester-wise. Master your subjects and
                         ace your exams with our curated question banks.
-                    </p>
-                    <div className="mt-8 flex justify-center gap-4">
+                    </motion.p>
+                    {/* HIGHLIGHT: Use motion.div for button entrance */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5, delay: 0.5 }}
+                        className="mt-8 flex justify-center gap-4"
+                    >
                         <a
                             href="#"
                             onClick={(e) => {
@@ -305,7 +328,7 @@ const HomePage = ({ onNavClick, semesters }) => {
                         >
                             Get Started
                         </a>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
 
@@ -314,9 +337,16 @@ const HomePage = ({ onNavClick, semesters }) => {
                 <h2 className="text-2xl font-bold text-center text-slate-800 mb-8">
                     Quick Access to Semesters
                 </h2>
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
-                    {semesters.map((sem, index) => (
-                        <a
+                {/* HIGHLIGHT: Use motion.div with staggered list variants */}
+                <motion.div
+                    variants={semesterVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4"
+                >
+                    {semesters.map((sem) => (
+                        <motion.a
+                            variants={itemVariants} // Apply item variant
                             href="#"
                             key={sem._id}
                             onClick={(e) => {
@@ -324,14 +354,15 @@ const HomePage = ({ onNavClick, semesters }) => {
                                 onNavClick(`semester-${sem.number}`, { semester: sem });
                             }}
                             className="text-center p-4 bg-gradient-to-br from-white via-sky-50 to-cyan-100 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 font-semibold text-slate-700 border border-sky-100 hover:border-sky-400 hover:bg-gradient-to-br hover:from-sky-100 hover:to-cyan-200"
-                            style={{ animationDelay: `${index * 60}ms` }}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
                         >
                             <span className="block text-lg font-bold text-sky-600 drop-shadow-md">
                                 {sem.name}
                             </span>
-                        </a>
+                        </motion.a>
                     ))}
-                </div>
+                </motion.div>
             </div>
 
             {/* Features Section */}
@@ -340,13 +371,11 @@ const HomePage = ({ onNavClick, semesters }) => {
                     <h2 className="text-3xl font-bold text-slate-800">Why UniPrep?</h2>
                     <p className="mt-2 text-slate-500">Everything you need, all in one place.</p>
                 </div>
-                <div
-                    ref={featuresRef}
-                    className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4"
-                >
+                {/* HIGHLIGHT: Removed featuresRef and IntersectionObserver. FeatureCard now handles its own animation based on index/delay. */}
+                <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
                     <FeatureCard
                         title="Comprehensive Bank"
-                        delay="0s"
+                        index={0} // Passed as index for staggered delay
                         icon={
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -368,7 +397,7 @@ const HomePage = ({ onNavClick, semesters }) => {
                     </FeatureCard>
                     <FeatureCard
                         title="Realistic Practice"
-                        delay="0.2s"
+                        index={1} // Passed as index for staggered delay
                         icon={
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -390,7 +419,7 @@ const HomePage = ({ onNavClick, semesters }) => {
                     </FeatureCard>
                     <FeatureCard
                         title="Track Your Progress"
-                        delay="0.4s"
+                        index={2} // Passed as index for staggered delay
                         icon={
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -416,88 +445,139 @@ const HomePage = ({ onNavClick, semesters }) => {
 
             {/* Custom CSS for animations and effects */}
             <style>{`
- .animated-gradient-text {
- background-size: 200% 200%;
- animation: gradient-move 3s ease-in-out infinite;
- }
- @keyframes gradient-move {
- 0% { background-position: 0% 50%; }
- 50% { background-position: 100% 50%; }
- 100% { background-position: 0% 50%; }
- }
- .modern-glow-btn {
- background-image: linear-gradient(90deg, #0ea5e9 0%, #38bdf8 50%, #f472b6 100%);
- box-shadow: 0 0 20px 0 rgba(56,189,248,0.25), 0 2px 8px 0 rgba(2,132,199,0.10);
- border: none;
- position: relative;
- overflow: hidden;
- }
- .modern-glow-btn::after {
- content: '';
- position: absolute;
- left: 0; top: 0; right: 0; bottom: 0;
- opacity: 0.2;
- background: radial-gradient(circle, #38bdf8 0%, #f472b6 100%);
- z-index: 0;
- pointer-events: none;
- transition: opacity 0.3s;
- }
- .modern-glow-btn:hover {
- box-shadow: 0 0 40px 0 rgba(56,189,248,0.35), 0 8px 24px 0 rgba(2,132,199,0.15);
- transform: translateY(-2px) scale(1.03);
- }
- .modern-glow-btn:active {
- transform: scale(0.98);
- }
- @keyframes float-slow {
- 0% { transform: translateY(0) scale(1); }
- 50% { transform: translateY(30px) scale(1.05); }
- 100% { transform: translateY(0) scale(1); }
- }
- @keyframes float-fast {
- 0% { transform: translateY(0) scale(1); }
-50% { transform: translateY(-20px) scale(1.03); }
- 100% { transform: translateY(0) scale(1); }
- }
- .animate-float-slow { animation: float-slow 8s ease-in-out infinite; }
- .animate-float-fast { animation: float-fast 5s ease-in-out infinite; }
- `}</style>
+/* Existing CSS styles remain unchanged */
+.animated-gradient-text {
+    background-size: 200% 200%;
+    animation: gradient-move 3s ease-in-out infinite;
+}
+@keyframes gradient-move {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.modern-glow-btn {
+    background-image: linear-gradient(90deg, #0ea5e9 0%, #38bdf8 50%, #f472b6 100%);
+    box-shadow: 0 0 20px 0 rgba(56,189,248,0.25), 0 2px 8px 0 rgba(2,132,199,0.10);
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+.modern-glow-btn::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    opacity: 0.2;
+    background: radial-gradient(circle, #38bdf8 0%, #f472b6 100%);
+    z-index: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+.modern-glow-btn:hover {
+    box-shadow: 0 0 40px 0 rgba(56,189,248,0.35), 0 8px 24px 0 rgba(2,132,199,0.15);
+    transform: translateY(-2px) scale(1.03);
+}
+.modern-glow-btn:active {
+    transform: scale(0.98);
+}
+@keyframes float-slow {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(30px) scale(1.05); }
+    100% { transform: translateY(0) scale(1); }
+}
+@keyframes float-fast {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.03); }
+    100% { transform: translateY(0) scale(1); }
+}
+.animate-float-slow { animation: float-slow 8s ease-in-out infinite; }
+.animate-float-fast { animation: float-fast 5s ease-in-out infinite; }
+
+/* REMOVED: .page and .animate-in CSS since Framer Motion handles these */
+body { font-family: 'Inter', sans-serif; background-color: #f7faff; }
+.active-nav { color: #0284c7; font-weight: 600; }
+.gradient-btn { background-image: linear-gradient(to right, #0ea5e9, #0284c7); transition: all 0.3s ease; }
+.gradient-btn:hover { box-shadow: 0 10px 20px -10px rgba(2, 132, 199, 0.6); transform: translateY(-2px); }
+.bookmark-btn.bookmarked svg { fill: #f59e0b; color: #f59e0b; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #e0f2fe; }
+::-webkit-scrollbar-thumb { background: #7dd3fc; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #0ea5e9; }
+.bg-grid-slate-200 { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(226 232 240 / 1)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e"); }
+
+`}</style>
         </section>
     );
 };
 
-const SemestersPage = ({ onNavClick, semesters }) => (
-    <section className="page active">
-        <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-slate-800">Select a Semester</h1>
-            <p className="mt-2 text-slate-500">
-                Choose your semester to view the subjects.
-            </p>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
-            {semesters.map((sem, index) => (
-                <a
-                    href="#"
-                    key={sem._id}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        onNavClick(`semester-${sem.number}`, { semester: sem });
-                    }}
-                    className="text-center p-4 bg-gradient-to-br from-white via-sky-50 to-cyan-100 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 font-semibold text-slate-700 border border-sky-100 hover:border-sky-400 hover:bg-gradient-to-br hover:from-sky-100 hover:to-cyan-200"
-                    style={{ animationDelay: `${index * 60}ms` }}
-                >
-                    <span className="block text-lg font-bold text-sky-600 drop-shadow-md">
-                        {sem.name}
-                    </span>
-                </a>
-            ))}
-        </div>
-    </section>
-);
+const SemestersPage = ({ onNavClick, semesters }) => {
+    const semesterVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.05,
+            },
+        },
+    };
+
+    const itemVariants = {
+        hidden: { y: 20, opacity: 0 },
+        visible: { y: 0, opacity: 1, transition: { duration: 0.3 } },
+    };
+
+    return (
+        <section className="page active">
+            {/* HIGHLIGHT: Use motion.div for title entrance */}
+            <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="text-center mb-12"
+            >
+                <h1 className="text-4xl font-bold text-slate-800">Select a Semester</h1>
+                <p className="mt-2 text-slate-500">
+                    Choose your semester to view the subjects.
+                </p>
+            </motion.div>
+            {/* HIGHLIGHT: Use motion.div with staggered list variants */}
+            <motion.div
+                variants={semesterVariants}
+                initial="hidden"
+                animate="visible"
+                className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4"
+            >
+                {semesters.map((sem) => (
+                    <motion.a
+                        variants={itemVariants} // Apply item variant
+                        href="#"
+                        key={sem._id}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            onNavClick(`semester-${sem.number}`, { semester: sem });
+                        }}
+                        className="text-center p-4 bg-gradient-to-br from-white via-sky-50 to-cyan-100 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 font-semibold text-slate-700 border border-sky-100 hover:border-sky-400 hover:bg-gradient-to-br hover:from-sky-100 hover:to-cyan-200"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        <span className="block text-lg font-bold text-sky-600 drop-shadow-md">
+                            {sem.name}
+                        </span>
+                    </motion.a>
+                ))}
+            </motion.div>
+        </section>
+    );
+};
 
 const AboutPage = ({ onNavClick }) => (
     <section className="page active">
-        <div className="bg-white rounded-xl shadow-sm p-8 md:p-12 max-w-4xl mx-auto">
+        {/* HIGHLIGHT: Use motion.div for the main content block entrance */}
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="bg-white rounded-xl shadow-sm p-8 md:p-12 max-w-4xl mx-auto"
+        >
             <h1 className="text-4xl font-bold text-center text-slate-800">
                 About UniPrep
             </h1>
@@ -526,27 +606,38 @@ const AboutPage = ({ onNavClick }) => (
                     Start Practicing
                 </a>
             </div>
-        </div>
+        </motion.div>
     </section>
 );
 
 const DashboardPage = () => {
     return (
         <section className="page active">
-            <div className="text-center p-12 bg-white rounded-lg shadow-sm">
+            <motion.div // HIGHLIGHT: Use motion.div for page content entrance
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3 }}
+                className="text-center p-12 bg-white rounded-lg shadow-sm"
+            >
                 <h1 className="text-3xl font-bold">Dashboard</h1>
                 <p className="mt-2 text-slate-500">This page is under construction.</p>
-            </div>
+            </motion.div>
         </section>
     );
 };
+
 const PracticeTestPage = () => {
     return (
         <section className="page active">
-            <div className="text-center p-12 bg-white rounded-lg shadow-sm">
+            <motion.div // HIGHLIGHT: Use motion.div for page content entrance
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3 }}
+                className="text-center p-12 bg-white rounded-lg shadow-sm"
+            >
                 <h1 className="text-3xl font-bold">Practice Test</h1>
                 <p className="mt-2 text-slate-500">This page is under construction.</p>
-            </div>
+            </motion.div>
         </section>
     );
 };
@@ -554,11 +645,11 @@ const PracticeTestPage = () => {
 // --- Main App Component ---
 export default function App() {
     const [currentPage, setCurrentPage] = useState(
-    localStorage.getItem("currentPage") || "home"
-);
-const [pageContext, setPageContext] = useState(
-    JSON.parse(localStorage.getItem("pageContext")) || {}
-);
+        localStorage.getItem("currentPage") || "home"
+    );
+    const [pageContext, setPageContext] = useState(
+        JSON.parse(localStorage.getItem("pageContext")) || {}
+    );
 
     const [user, setUser] = useState(null);
     const [semesters, setSemesters] = useState([]);
@@ -578,21 +669,21 @@ const [pageContext, setPageContext] = useState(
     }, []);
 
     const handleLogout = () => {
-    setUser(null);
-    setCurrentPage("home");
-    setPageContext({});
-    localStorage.removeItem("currentPage");
-    localStorage.removeItem("pageContext");
-};
+        setUser(null);
+        setCurrentPage("home");
+        setPageContext({});
+        localStorage.removeItem("currentPage");
+        localStorage.removeItem("pageContext");
+    };
 
 
     const handleNavClick = (page, context = {}) => {
-    window.scrollTo(0, 0);
-    setCurrentPage(page);
-    setPageContext(context);
-    localStorage.setItem("currentPage", page);
-    localStorage.setItem("pageContext", JSON.stringify(context));
-};
+        window.scrollTo(0, 0);
+        setCurrentPage(page);
+        setPageContext(context);
+        localStorage.setItem("currentPage", page);
+        localStorage.setItem("pageContext", JSON.stringify(context));
+    };
 
 
     const handleLoginSuccess = (loggedInUser) => {
@@ -638,13 +729,13 @@ const [pageContext, setPageContext] = useState(
             default:
                 // Dynamic semester pages based on the fetched data
                 if (currentPage.startsWith("semester-")) {
-    const semNumber = currentPage.split("-")[1];
-    const sem =
-        semesters.find((s) => String(s.number) === semNumber) || pageContext.semester;
-    if (sem) {
-        return <SemesterPage semester={sem} onNavClick={handleNavClick} />;
-    }
-}
+                    const semNumber = currentPage.split("-")[1];
+                    const sem =
+                        semesters.find((s) => String(s.number) === semNumber) || pageContext.semester;
+                    if (sem) {
+                        return <SemesterPage semester={sem} onNavClick={handleNavClick} />;
+                    }
+                }
 
                 return <HomePage onNavClick={handleNavClick} semesters={semesters} />;
         }
@@ -653,20 +744,18 @@ const [pageContext, setPageContext] = useState(
     return (
         <>
             <style>{`
- body { font-family: 'Inter', sans-serif; background-color: #f7faff; }
- .active-nav { color: #0284c7; font-weight: 600; }
- .gradient-btn { background-image: linear-gradient(to right, #0ea5e9, #0284c7); transition: all 0.3s ease; }
- .gradient-btn:hover { box-shadow: 0 10px 20px -10px rgba(2, 132, 199, 0.6); transform: translateY(-2px); }
- .bookmark-btn.bookmarked svg { fill: #f59e0b; color: #f59e0b; }
- ::-webkit-scrollbar { width: 8px; }
- ::-webkit-scrollbar-track { background: #e0f2fe; }
- ::-webkit-scrollbar-thumb { background: #7dd3fc; border-radius: 10px; }
- ::-webkit-scrollbar-thumb:hover { background: #0ea5e9; }
- .page { animation: fadeIn 0.5s ease-in-out; }
- @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
- .animate-in { opacity: 0; transform: translateY(20px); animation: fadeIn 0.5s forwards; }
- .bg-grid-slate-200 { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(226 232 240 / 1)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e"); }
- `}</style>
+/* HIGHLIGHT: Removed the old fadeIn CSS animation since Framer Motion handles it */
+body { font-family: 'Inter', sans-serif; background-color: #f7faff; }
+.active-nav { color: #0284c7; font-weight: 600; }
+.gradient-btn { background-image: linear-gradient(to right, #0ea5e9, #0284c7); transition: all 0.3s ease; }
+.gradient-btn:hover { box-shadow: 0 10px 20px -10px rgba(2, 132, 199, 0.6); transform: translateY(-2px); }
+.bookmark-btn.bookmarked svg { fill: #f59e0b; color: #f59e0b; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #e0f2fe; }
+::-webkit-scrollbar-thumb { background: #7dd3fc; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #0ea5e9; }
+.bg-grid-slate-200 { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(226 232 240 / 1)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e"); }
+`}</style>
             <div className="antialiased text-slate-800">
                 <Header
                     onNavClick={handleNavClick}
@@ -676,7 +765,19 @@ const [pageContext, setPageContext] = useState(
                 />
 
                 <main className="container mx-auto p-4 sm:p-6 lg:p-8">
-                    {renderPage()}
+                    {/* HIGHLIGHT: Use AnimatePresence for page-to-page transitions */}
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={currentPage} // Key is essential for AnimatePresence to detect a change
+                            initial={{ opacity: 0, y: 15 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -15 }}
+                            transition={{ duration: 0.4 }}
+                            className="relative" // Added relative for page positioning during transition
+                        >
+                            {renderPage()}
+                        </motion.div>
+                    </AnimatePresence>
                 </main>
             </div>
         </>

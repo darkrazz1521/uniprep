@@ -1,22 +1,19 @@
 const express = require("express");
-const router = express.Router();
 const multer = require("multer");
 const fs = require("fs");
-const Subject = require("../models/Subject");
 const Question = require("../models/Question");
+const Subject = require("../models/Subject");
 
-// Multer setup
+const router = express.Router();
 const upload = multer({ dest: "uploads/" });
 
-// Upload JSON questions
+// Upload JSON questions for a subject
 router.post("/:subjectId/upload", upload.single("questionsFile"), async (req, res) => {
   try {
     const subject = await Subject.findById(req.params.subjectId);
     if (!subject) return res.status(404).json({ message: "Subject not found" });
 
-    const filePath = req.file.path;
-    const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-
+    const data = JSON.parse(fs.readFileSync(req.file.path, "utf-8"));
     if (!Array.isArray(data)) {
       return res.status(400).json({ message: "Invalid JSON format: must be an array" });
     }
@@ -25,29 +22,26 @@ router.post("/:subjectId/upload", upload.single("questionsFile"), async (req, re
       text: q.questionText,
       options: q.options.map(opt => ({
         text: opt,
-        isCorrect: opt === q.correctAnswer
+        isCorrect: opt === q.correctAnswer,
       })),
       difficulty: q.difficulty,
       unitNo: q.unitNo,
       topic: q.topic,
       subject: subject._id,
-      createdAt: q.createdAt || Date.now()
+      createdAt: q.createdAt || Date.now(),
     }));
 
     await Question.insertMany(questions);
-
-    // Remove temp file
-    fs.unlinkSync(filePath);
+    fs.unlinkSync(req.file.path);
 
     res.json({ message: "Questions uploaded successfully!", count: questions.length });
   } catch (err) {
-    console.error(err);
     res.status(500).json({ message: "Server error", error: err.message });
   }
 });
 
-// Fetch all questions for a subject
-router.get("/:subjectId", async (req, res) => {
+// Get all questions for a subject
+router.get("/subject/:subjectId", async (req, res) => {
   try {
     const questions = await Question.find({ subject: req.params.subjectId });
     res.json(questions);
@@ -55,5 +49,6 @@ router.get("/:subjectId", async (req, res) => {
     res.status(500).json({ message: "Server error", error: err.message });
   }
 });
+
 
 module.exports = router;

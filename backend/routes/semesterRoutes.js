@@ -1,28 +1,26 @@
 const express = require("express");
 const Semester = require("../models/Semester");
+const Subject = require("../models/Subject");
 
 const router = express.Router();
 
-// ✅ Get all semesters
+// Get all semesters
 router.get("/", async (req, res) => {
-  try {
-    const semesters = await Semester.find();
-    res.json(semesters);
-  } catch (error) {
-    res.status(500).json({ message: "Error fetching semesters", error });
-  }
+  const semesters = await Semester.find();
+  res.json(semesters);
 });
 
-// ✅ Add a new semester
+// Create semester
 router.post("/", async (req, res) => {
-  try {
-    const { name, number } = req.body;
-    const semester = new Semester({ name, number });
-    await semester.save();
-    res.status(201).json(semester);
-  } catch (error) {
-    res.status(400).json({ message: "Error creating semester", error });
-  }
+  const semester = new Semester(req.body);
+  await semester.save();
+  res.status(201).json(semester);
+});
+
+// Get subjects for a semester
+router.get("/:semesterId/subjects", async (req, res) => {
+  const subjects = await Subject.find({ semester: req.params.semesterId });
+  res.json(subjects);
 });
 
 module.exports = router;
