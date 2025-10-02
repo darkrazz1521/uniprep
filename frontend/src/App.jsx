@@ -10,6 +10,7 @@ import SemesterPage from "./pages/SemesterPage.jsx";
 import QuestionBankPage from "./pages/QuestionBankPage.jsx";
 import AdminPage from "./pages/AdminPage.jsx";
 
+
 // --- Reusable SVG Icon Components ---
 const LogoIcon = () => (
     <svg
@@ -648,7 +649,13 @@ export default function App() {
         localStorage.getItem("currentPage") || "home"
     );
     const [pageContext, setPageContext] = useState(
-        JSON.parse(localStorage.getItem("pageContext")) || {}
+        (() => {
+            try {
+                return JSON.parse(localStorage.getItem("pageContext")) || {};
+            } catch {
+                return {};
+            }
+        })()
     );
 
     const [user, setUser] = useState(null);
@@ -658,11 +665,17 @@ export default function App() {
     useEffect(() => {
         const fetchSemesters = async () => {
             try {
-                const res = await fetch("http://localhost:5000/api/semesters");
+                let res = await fetch("http://localhost:5000/api/semesters");
+                if (!res.ok) {
+                    // fallback if /api/semesters is not available
+                    res = await fetch("http://localhost:5000/api/admin/semesters");
+                }
+                if (!res.ok) throw new Error("Failed to fetch semesters");
                 const data = await res.json();
                 setSemesters(data);
             } catch (err) {
                 console.error("Error fetching semesters:", err);
+                setSemesters([]);
             }
         };
         fetchSemesters();

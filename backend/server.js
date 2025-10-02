@@ -5,6 +5,9 @@ const mongoose = require("mongoose");
 
 const authRoutes = require("./routes/auth");
 const adminRoutes = require("./routes/admin");
+const subjectRoutes = require("./routes/subjectRoutes");
+const questionRoutes = require("./routes/questionRoutes"); // <-- add this line
+const semesterRoutes = require("./routes/semesterRoutes"); // <-- add this line
 
 const app = express();
 app.use(cors());
@@ -23,6 +26,9 @@ mongoose.connect(MONGODB_URI, {
 app.get("/", (req, res) => res.send("Backend is running 🚀"));
 app.use("/api/auth", authRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/subjects", subjectRoutes);
+app.use("/api/questions", questionRoutes); // <-- add this line
+app.use("/api/semesters", semesterRoutes); // <-- add this line
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
